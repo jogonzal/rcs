@@ -1,4 +1,4 @@
-type PlayerName = 'AndreasH' |
+export type PlayerName = 'AndreasH' |
 'ChrisB'|
 'DiegoV'|
 'DineshV'|
