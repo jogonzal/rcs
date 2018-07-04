@@ -26,8 +26,8 @@ export interface IPlayerGameData {
 export interface IGameData {
     Opponent: string
     Date: string
-    GoalsInFavor: string
-    GoalsAgainst: string
+    GoalsInFavor: number
+    GoalsAgainst: number
     Notes: string
     PlayerStats: { [key in PlayerName]?: IPlayerGameData }
 }

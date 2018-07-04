@@ -34,8 +34,8 @@ const spring2018Data: IGameData[] =
 	{
 		Opponent: 'Feeling Lucky',
 		Date: '4/11/2018',
-		GoalsInFavor: '1',
-		GoalsAgainst: '5',
+		GoalsInFavor: 1,
+		GoalsAgainst: 5,
 		Notes: 'Diego was our only scorer, we should get our revenge at the end of the season.',
 		PlayerStats:
 		{
@@ -61,8 +61,8 @@ const spring2018Data: IGameData[] =
 	{
 		Opponent: 'Torpedo Gopota',
 		Date: '4/18/2018',
-		GoalsInFavor: '9',
-		GoalsAgainst: '4',
+		GoalsInFavor: 9,
+		GoalsAgainst: 4,
 		Notes: 'Ville attempted a bycicle kick and almost got it in, Martin got injured towards the end of the game.',
 		PlayerStats: {
 			AndreasH: { 'Goals': 0, 'Assists': 0 },
@@ -87,8 +87,8 @@ const spring2018Data: IGameData[] =
 	{
 		Opponent: 'Team HAZE',
 		Date: '4/25/2018',
-		GoalsInFavor: '5',
-		GoalsAgainst: '5',
+		GoalsInFavor: 5,
+		GoalsAgainst: 5,
 		Notes: '-',
 		PlayerStats: {
 			AndreasH: { 'Goals': 0, 'Assists': 0 },
@@ -113,8 +113,8 @@ const spring2018Data: IGameData[] =
 	{
 		Opponent: 'TBD',
 		Date: '05/02/2018',
-		GoalsInFavor: '6',
-		GoalsAgainst: '4',
+		GoalsInFavor: 6,
+		GoalsAgainst: 4,
 		Notes: 'Solid game',
 		PlayerStats:
 		{
@@ -141,8 +141,8 @@ const spring2018Data: IGameData[] =
 	{
 		Opponent: 'SamuraiFC',
 		Date: '05/09/2018',
-		GoalsInFavor: '2',
-		GoalsAgainst: '5',
+		GoalsInFavor: 2,
+		GoalsAgainst: 5,
 		Notes: 'We had 8 declines on this one',
 		PlayerStats:
 		{
@@ -168,8 +168,8 @@ const spring2018Data: IGameData[] =
 	{
 		Opponent: 'The Rush',
 		Date: '5/16/2018',
-		GoalsInFavor: '11',
-		GoalsAgainst: '8',
+		GoalsInFavor: 11,
+		GoalsAgainst: 8,
 		Notes: 'Diego comments: "Nico played with cheat codes"',
 		PlayerStats:
 		{
@@ -195,8 +195,8 @@ const spring2018Data: IGameData[] =
 	{
 		Opponent: 'The Pot',
 		Date: '6/13/2018',
-		GoalsInFavor: '7',
-		GoalsAgainst: '5',
+		GoalsInFavor: 7,
+		GoalsAgainst: 5,
 		Notes: 'Pot indoor > Pot outdoor',
 		PlayerStats:
 		{

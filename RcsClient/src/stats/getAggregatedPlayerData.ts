@@ -1,6 +1,6 @@
 import * as _ from 'lodash'
 import spring2018Data from '../../GameData/Spring2018Data'
-import { PlayerName, IPlayerGameData } from '../../GameData/IGameData'
+import { PlayerName, IPlayerGameData, IGameData } from '../../GameData/IGameData'
 
 const accumulatedScoresAndAssists: { [key in PlayerName]?: IPlayerGameData } = {}
 for (const game of spring2018Data) {
@@ -29,19 +29,27 @@ export interface IAggregatedPlayerData {
     assists: number
 }
 
-let dataForChart: IAggregatedPlayerData[] = []
-for (const playerName of Object.keys(accumulatedScoresAndAssists)) {
-    const currentPlayerData: IPlayerGameData = accumulatedScoresAndAssists[playerName]
-    const aggregatedPlayerData: IAggregatedPlayerData = {
-        name: playerName,
-        goals: currentPlayerData.Goals,
-        assists: currentPlayerData.Assists
+const aggregatedPlayerDataForAllGames: IAggregatedPlayerData[] = getAggregatedPlayerDataForGame(accumulatedScoresAndAssists)
+
+export function getAggregatedPlayerDataForGame(playerData: { [key in PlayerName]?: IPlayerGameData }): IAggregatedPlayerData[] {
+    let dataToReturn: IAggregatedPlayerData[] = []
+    for (const playerName of Object.keys(playerData)) {
+        const currentPlayerData: IPlayerGameData = playerData[playerName]
+        if (currentPlayerData.Assists === 0 && currentPlayerData.Goals === 0) {
+            continue
+        }
+        const aggregatedPlayerData: IAggregatedPlayerData = {
+            name: playerName,
+            goals: currentPlayerData.Goals,
+            assists: currentPlayerData.Assists
+        }
+        dataToReturn.push(aggregatedPlayerData)
     }
-    dataForChart.push(aggregatedPlayerData)
+    return dataToReturn
 }
 
-export default function getAggregatedPlayerData(orderBy: 'goals' | 'assists', n: number) {
-    let newData = _.orderBy(dataForChart, [orderBy], ['desc'])
+export default function getAggregatedPlayerDataForAllGames(orderBy: 'goals' | 'assists', n: number) {
+    let newData = _.orderBy(aggregatedPlayerDataForAllGames, [orderBy], ['desc'])
     newData = _.take(newData, n)
     return newData
 }

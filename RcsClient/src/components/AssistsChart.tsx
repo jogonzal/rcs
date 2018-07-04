@@ -3,11 +3,11 @@ import getAggregatedPlayerDataForAllGames from '../stats/getAggregatedPlayerData
 import PlayerChart from './PlayerChart'
 
 const N = 5
-const dataForChart = getAggregatedPlayerDataForAllGames('goals', N)
+const dataForChart = getAggregatedPlayerDataForAllGames('assists', N)
 
-const GoalsChart = () => (
+const AssistsChart = () => (
     <>
-        <h2>Top {N} Goals</h2>
+        <h2>Top {N} Assists</h2>
         <PlayerChart
             data={dataForChart}
             width={800}
@@ -16,4 +16,4 @@ const GoalsChart = () => (
     </>
 )
 
-export default GoalsChart
+export default AssistsChart
