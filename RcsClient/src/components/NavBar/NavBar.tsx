@@ -42,6 +42,7 @@ const NavBar = () => (
             </ul>
         </div>
     </nav>
+    {/* This is just to make some space */}
     <div style={{height: '20px'}}/>
     </>
 )
