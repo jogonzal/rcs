@@ -1,8 +1,11 @@
 import * as React from 'react'
-import Props from './props'
 
 type State = {
     date: Date
+}
+
+type Props  = {
+    input: string
 }
 
 export default class Clock extends React.Component<Props, State> {

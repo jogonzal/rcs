@@ -1,9 +1,8 @@
 import * as React from 'react'
 const reactLogo = require('./../assets/img/react_logo.svg')
 import './../assets/scss/App.scss'
-import Clock from './Clock/Clock'
+import Clock from './Clock'
 import Toggle from './Toggle'
-import Link from './Link'
 import NavBar from './NavBar/NavBar'
 
 const Tasks = () => (

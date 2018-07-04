@@ -4,9 +4,10 @@ import 'bootstrap/dist/js/bootstrap.bundle.min.js'
 import Link from '../Link'
 
 const NavBar = () => (
+    <>
     <nav className='navbar navbar-expand-lg navbar-light bg-light'>
         <Link href='/' >
-            <a className='navbar-brand' >Navbar</a>
+            <a className='navbar-brand' >RCS</a>
         </Link>
         <button className='navbar-toggler' type='button' data-toggle='collapse' data-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation'>
             <span className='navbar-toggler-icon'></span>
@@ -41,6 +42,8 @@ const NavBar = () => (
             </ul>
         </div>
     </nav>
+    <div style={{height: '20px'}}/>
+    </>
 )
 
 export default NavBar

@@ -1,19 +1,19 @@
 import * as React from 'react'
-import './../assets/scss/App.scss'
-import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip } from 'recharts'
 import getAggregatedPlayerData from '../stats/getAggregatedPlayerData'
+import PlayerChart from './PlayerChart'
 
-const dataForChart = getAggregatedPlayerData('goals', 10)
+const N = 5
+const dataForChart = getAggregatedPlayerData('goals', N)
 
 const GoalsChart = () => (
-    <BarChart width={800} height={300} data={dataForChart}
-        margin={{ top: 5, right: 30, left: 20, bottom: 5 }}>
-        <CartesianGrid strokeDasharray='3 3' />
-        <XAxis dataKey='name' />
-        <YAxis />
-        <Tooltip />
-        <Bar dataKey='goals' fill='#f49542' />
-    </BarChart>
+    <>
+        <h2>Top {N} Goalscorers</h2>
+        <PlayerChart
+            data={dataForChart}
+            width={800}
+            height={300}
+        />
+    </>
 )
 
 export default GoalsChart
