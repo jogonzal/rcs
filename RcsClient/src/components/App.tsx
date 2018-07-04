@@ -6,7 +6,7 @@ import AssistsChart from './AssistsChart'
 import GameHistory from './GameHistory'
 import spring2018Data from '../../GameData/Spring2018Data'
 
-// TODO: picker for data
+// TODO: picker for data and pass in data to goals chart and assists chart
 const data = spring2018Data
 
 const App = () => (
