@@ -20,12 +20,12 @@ const NavBar = () => (
                         Home
                     </Link>
                 </li>
-                <li className='nav-item'>
+                {/* <li className='nav-item'>
                     <Link href='/tasks' className='nav-link' >
                         Tasks
                     </Link>
-                </li>
-                <li className='nav-item dropdown'>
+                </li> */}
+                {/* <li className='nav-item dropdown'>
                     <a className='nav-link dropdown-toggle' href='#' id='navbarDropdown' role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
                         Dropdown
                     </a>
@@ -38,7 +38,7 @@ const NavBar = () => (
                 </li>
                 <li className='nav-item'>
                     <a className='nav-link disabled' href='#'>Disabled</a>
-                </li>
+                </li> */}
             </ul>
         </div>
     </nav>
