@@ -11,13 +11,29 @@ const availableSeasons: { [key: string]: IGameData[] } = {
 }
 
 type State = {
-  currentSeason: string
+  currentSeason: string,
+  width: number
 }
 
 type Props = {
 }
 
 export default class App extends React.Component<Props, State> {
+
+  updateDimensions = () => {
+    this.setState({
+      width: Math.min(window.innerWidth, 800)
+    })
+  }
+
+  componentDidMount() {
+    window.addEventListener('resize', this.updateDimensions)
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.updateDimensions)
+  }
+
   changeSeason(season: any) {
     return () => {
       this.setState({
@@ -37,7 +53,10 @@ export default class App extends React.Component<Props, State> {
 
   constructor(props) {
     super(props)
-    this.state = { currentSeason: Object.keys(availableSeasons)[0] }
+    this.state = {
+      currentSeason: Object.keys(availableSeasons)[0],
+      width: Math.min(window.innerWidth, 800)
+    }
   }
 
   render() {
@@ -52,7 +71,7 @@ export default class App extends React.Component<Props, State> {
             field='goals'
             data={spring2018Data}
             height={300}
-            width={800}
+            width={this.state.width}
             N={5}
           />
           <hr />
@@ -60,7 +79,7 @@ export default class App extends React.Component<Props, State> {
             field='assists'
             data={spring2018Data}
             height={300}
-            width={800}
+            width={this.state.width}
             N={5}
           />
           <hr />
