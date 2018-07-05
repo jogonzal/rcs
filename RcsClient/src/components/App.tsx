@@ -1,6 +1,6 @@
 import * as React from 'react'
 import './../assets/scss/App.scss'
-import NavBar from './NavBar/NavBar'
+import NavBar from './NavBar'
 import GameHistory from './GameHistory'
 import spring2018Data from '../../GameData/Spring2018Data'
 import PlayerChart from './PlayerChart'

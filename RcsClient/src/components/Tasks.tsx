@@ -3,7 +3,7 @@ const reactLogo = require('./../assets/img/react_logo.svg')
 import './../assets/scss/App.scss'
 import Clock from './Clock'
 import Toggle from './Toggle'
-import NavBar from './NavBar/NavBar'
+import NavBar from './NavBar'
 
 const Tasks = () => (
   <div>

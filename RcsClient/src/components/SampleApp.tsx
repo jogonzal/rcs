@@ -4,7 +4,7 @@ import './../assets/scss/App.scss'
 import Clock from './Clock'
 import Toggle from './Toggle'
 import Link from './Link'
-import NavBar from './NavBar/NavBar'
+import NavBar from './NavBar'
 
 const SampleApp = () => (
   <div>

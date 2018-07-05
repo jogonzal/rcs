@@ -1,6 +1,6 @@
 import * as React from 'react'
 import './../assets/scss/App.scss'
-import NavBar from './NavBar/NavBar'
+import NavBar from './NavBar'
 import spring2018Data from '../../GameData/Spring2018Data'
 
 const RawData = () => (
