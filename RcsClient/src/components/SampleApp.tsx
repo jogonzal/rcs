@@ -5,7 +5,6 @@ import Clock from './Clock'
 import Toggle from './Toggle'
 import Link from './Link'
 import NavBar from './NavBar/NavBar'
-import GoalsChart from './GoalsChart'
 
 const SampleApp = () => (
   <div>
@@ -20,8 +19,6 @@ const SampleApp = () => (
     <Link href='/tasks' >
       <p>Please click me!</p>
     </Link>
-
-    <GoalsChart />
   </div>
 )
 
