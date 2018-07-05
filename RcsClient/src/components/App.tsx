@@ -22,7 +22,7 @@ export default class App extends React.Component<Props, State> {
 
   updateDimensions = () => {
     this.setState({
-      width: Math.min(window.innerWidth, 800)
+      width: Math.min(window.innerWidth * 0.9, 800)
     })
   }
 
@@ -55,7 +55,7 @@ export default class App extends React.Component<Props, State> {
     super(props)
     this.state = {
       currentSeason: Object.keys(availableSeasons)[0],
-      width: Math.min(window.innerWidth, 800)
+      width: Math.min(window.innerWidth * 0.9, 800)
     }
   }
 
