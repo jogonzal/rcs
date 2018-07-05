@@ -10,20 +10,18 @@ type State = {
 }
 
 type Props = {
-    title: string,
     data: IGameData[]
 }
 
 export default class GameHistory extends React.Component<Props, State> {
     renderResult = (gameData: IGameData) => {
         // TODO: colors
-        let result = 'TIE'
         if (gameData.GoalsInFavor > gameData.GoalsAgainst) {
-            result = 'WIN'
+            return (<span className='text-success'>WIN</span>)
         } else if (gameData.GoalsAgainst > gameData.GoalsInFavor) {
-            result = 'LOST'
+            return (<span className='text-danger'>LOST</span>)
         }
-        return result
+        return (<span className='text-primary'>TIE</span>)
     }
 
     renderRow = (gameData: IGameData, i: number) => {
@@ -53,7 +51,8 @@ export default class GameHistory extends React.Component<Props, State> {
         return (
             <tr key={i}>
                 <th scope='row'>{gameData.Opponent}</th>
-                <td>{this.renderResult(gameData)} {gameData.GoalsInFavor} - {gameData.GoalsAgainst}</td>
+                <td><strong>{this.renderResult(gameData)}</strong> {gameData.GoalsInFavor} - {gameData.GoalsAgainst}</td>
+                <td>{gameData.Date}</td>
                 <td>{goalsDescription}</td>
                 <td>{assistsDescription}</td>
             </tr>
@@ -63,12 +62,13 @@ export default class GameHistory extends React.Component<Props, State> {
     render() {
         return(
             <>
-                <h2>Game history for {this.props.title}</h2>
+                <h2>Game history</h2>
                 <table className='table'>
                     <thead>
                         <tr>
                         <th scope='col'>Opponent</th>
                         <th scope='col'>Result</th>
+                        <th scope='col'>Date</th>
                         <th scope='col'>Goals</th>
                         <th scope='col'>Assists</th>
                         </tr>

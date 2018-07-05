@@ -4,36 +4,71 @@ import NavBar from './NavBar/NavBar'
 import GameHistory from './GameHistory'
 import spring2018Data from '../../GameData/Spring2018Data'
 import PlayerChart from './PlayerChart'
+import { IGameData } from '../../GameData/IGameData'
 
-// TODO: picker for data and pass in data to goals chart and assists chart
-const data = spring2018Data
+const availableSeasons: { [key: string]: IGameData[] } = {
+  'Spring 2018': spring2018Data
+}
 
-const App = () => (
-  <div>
-    <NavBar />
-    <div className='container'>
-      <PlayerChart
-        field='goals'
-        data={spring2018Data}
-        height={300}
-        width={800}
-        N={5}
-      />
-      <hr />
-      <PlayerChart
-        field='assists'
-        data={spring2018Data}
-        height={300}
-        width={800}
-        N={5}
-      />
-      <hr />
-      <GameHistory
-        data= {spring2018Data}
-        title= 'Game history'
-      />
-    </div>
-  </div>
-)
+type State = {
+  currentSeason: string
+}
 
-export default App
+type Props = {
+}
+
+export default class App extends React.Component<Props, State> {
+  changeSeason(season: any) {
+    return () => {
+      this.setState({
+        currentSeason: season
+      })
+    }
+  }
+
+  renderSeasonButtons = () => {
+    const arr = Object.keys(availableSeasons)
+    return arr.map(season => (
+      <>
+        <button className='btn btn-info' onClick={this.changeSeason(season)} >{season}</button> |
+      </>
+    ))
+  }
+
+  constructor(props) {
+    super(props)
+    this.state = { currentSeason: Object.keys(availableSeasons)[0] }
+  }
+
+  render() {
+    return (
+      <div>
+        <NavBar />
+        <div className='container'>
+          <div>{this.renderSeasonButtons()}</div>
+          <hr />
+          <h1>Stats for {this.state.currentSeason}</h1>
+          <PlayerChart
+            field='goals'
+            data={spring2018Data}
+            height={300}
+            width={800}
+            N={5}
+          />
+          <hr />
+          <PlayerChart
+            field='assists'
+            data={spring2018Data}
+            height={300}
+            width={800}
+            N={5}
+          />
+          <hr />
+          <GameHistory
+            data={spring2018Data}
+          />
+        </div>
+      </div>
+    )
+  }
+}

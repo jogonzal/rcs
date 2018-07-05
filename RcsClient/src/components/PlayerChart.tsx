@@ -21,7 +21,7 @@ export default class PlayerChart extends React.Component<Props, State> {
 
         return (
             <>
-                <h2></h2>
+                <h2>Top {this.props.N} {this.props.field}</h2>
                 <BarChart width={this.props.width} height={this.props.height} data={dataForChart}
                     margin={{ top: 5, right: 30, left: 20, bottom: 5 }}>
                     <CartesianGrid strokeDasharray='3 3' />

@@ -195,8 +195,8 @@ const spring2018Data: IGameData[] =
 	{
 		Opponent: 'The Pot',
 		Date: '6/13/2018',
-		GoalsInFavor: 7,
-		GoalsAgainst: 5,
+		GoalsInFavor: 5,
+		GoalsAgainst: 7,
 		Notes: 'Pot indoor > Pot outdoor',
 		PlayerStats:
 		{
