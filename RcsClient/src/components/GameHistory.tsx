@@ -1,7 +1,6 @@
 import * as React from 'react'
 import 'bootstrap/scss/bootstrap.scss'
 import 'bootstrap/dist/js/bootstrap.bundle.min.js'
-import spring2018Data from '../../GameData/Spring2018Data'
 import { IGameData } from '../../GameData/IGameData'
 import { getAggregatedPlayerDataForGame, IAggregatedPlayerData } from '../stats/getAggregatedPlayerData'
 import _ = require('lodash')
@@ -74,7 +73,7 @@ export default class GameHistory extends React.Component<Props, State> {
                         </tr>
                     </thead>
                     <tbody>
-                        {spring2018Data.map(this.renderRow)}
+                        {this.props.data.map(this.renderRow)}
                     </tbody>
                 </table>
             </>

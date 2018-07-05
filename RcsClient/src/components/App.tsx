@@ -1,13 +1,18 @@
 import * as React from 'react'
+
 import './../assets/scss/App.scss'
+
 import NavBar from './NavBar'
 import GameHistory from './GameHistory'
-import spring2018Data from '../../GameData/Spring2018Data'
 import PlayerChart from './PlayerChart'
 import { IGameData } from '../../GameData/IGameData'
 
+import spring2018Data from '../../GameData/Spring2018Data'
+import summer2018Data from '../../GameData/Summer2018Data'
+
 const availableSeasons: { [key: string]: IGameData[] } = {
-  'Spring 2018': spring2018Data
+  'Spring 2018': spring2018Data,
+  'Summer 2018': summer2018Data
 }
 
 type State = {
@@ -69,7 +74,7 @@ export default class App extends React.Component<Props, State> {
           <h1>Stats for {this.state.currentSeason}</h1>
           <PlayerChart
             field='goals'
-            data={spring2018Data}
+            data={availableSeasons[this.state.currentSeason]}
             height={300}
             width={this.state.width}
             N={5}
@@ -77,15 +82,15 @@ export default class App extends React.Component<Props, State> {
           <hr />
           <PlayerChart
             field='assists'
-            data={spring2018Data}
+            data={availableSeasons[this.state.currentSeason]}
             height={300}
             width={this.state.width}
             N={5}
           />
           <hr />
           <GameHistory
-            data={spring2018Data}
-          />
+            data={availableSeasons[this.state.currentSeason]}
+            />
         </div>
       </div>
     )
