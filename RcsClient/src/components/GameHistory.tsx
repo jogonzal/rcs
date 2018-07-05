@@ -26,7 +26,7 @@ export default class GameHistory extends React.Component<Props, State> {
         return result
     }
 
-    renderRow = (gameData: IGameData) => {
+    renderRow = (gameData: IGameData, i: number) => {
         const aggregatePlayerStats = getAggregatedPlayerDataForGame(gameData.PlayerStats)
         const sortedByGoals: IAggregatedPlayerData[] = _.orderBy(aggregatePlayerStats, ['goals'], ['desc'])
 
@@ -51,7 +51,7 @@ export default class GameHistory extends React.Component<Props, State> {
         const assistsDescription = assistsDescriptionArr.join(', ')
 
         return (
-            <tr>
+            <tr key={i}>
                 <th scope='row'>{gameData.Opponent}</th>
                 <td>{this.renderResult(gameData)} {gameData.GoalsInFavor} - {gameData.GoalsAgainst}</td>
                 <td>{goalsDescription}</td>

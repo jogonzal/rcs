@@ -10,7 +10,6 @@ using Newtonsoft.Json;
 
 namespace RcsServer.Controllers
 {
-
 	public class HomeController : Controller
 	{
 		private static HtmlNode CreateScriptElementWithSingleObject(string varName, object propertySet)
