@@ -5,15 +5,7 @@ import './../assets/scss/App.scss'
 import NavBar from './NavBar'
 import GameHistory from './GameHistory'
 import PlayerChart from './PlayerChart'
-import { IGameData } from '../../GameData/IGameData'
-
-import spring2018Data from '../../GameData/Spring2018Data'
-import summer2018Data from '../../GameData/Summer2018Data'
-
-const availableSeasons: { [key: string]: IGameData[] } = {
-  'Spring 2018': spring2018Data,
-  'Summer 2018': summer2018Data
-}
+import availableSeasons from '../stats/availableSeasons'
 
 type State = {
   currentSeason: string,
