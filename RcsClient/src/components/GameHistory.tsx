@@ -14,7 +14,6 @@ type Props = {
 
 export default class GameHistory extends React.Component<Props, State> {
     renderResult = (gameData: IGameData) => {
-        // TODO: colors
         if (gameData.GoalsInFavor > gameData.GoalsAgainst) {
             return (<span className='text-success'>WIN</span>)
         } else if (gameData.GoalsAgainst > gameData.GoalsInFavor) {
