@@ -1,6 +1,6 @@
 import * as React from 'react'
 import './../assets/scss/App.scss'
-import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip } from 'recharts'
+import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts'
 import { IGameData } from '../../GameData/IGameData'
 import getAggregatedPlayerDataForAllGames from '../stats/getAggregatedPlayerData'
 
@@ -10,7 +10,6 @@ type State = {
 type Props = {
     data: IGameData[]
     height: number
-    width: number
     N: number,
     field: 'goals' | 'assists'
 }
@@ -23,13 +22,15 @@ export default class PlayerChart extends React.Component<Props, State> {
         return (
             <>
                 <h2>Top {this.props.N} {this.props.field}</h2>
-                <BarChart width={this.props.width} height={this.props.height} data={dataForChart} >
-                    <CartesianGrid strokeDasharray='3 3' />
-                    <XAxis dataKey='name' />
-                    <YAxis />
-                    <Tooltip />
-                    <Bar dataKey={ this.props.field } fill='#f49542' />
-                </BarChart>
+                <ResponsiveContainer width='100%' height={this.props.height}>
+                    <BarChart data={dataForChart} >
+                        <CartesianGrid strokeDasharray='3 3' />
+                        <XAxis dataKey='name' />
+                        <YAxis />
+                        <Tooltip />
+                        <Bar dataKey={ this.props.field } fill='#f49542' />
+                    </BarChart>
+                </ResponsiveContainer>
             </>
         )
     }

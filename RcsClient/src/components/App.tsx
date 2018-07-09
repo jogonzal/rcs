@@ -6,10 +6,10 @@ import NavBar from './NavBar'
 import GameHistory from './GameHistory'
 import PlayerChart from './PlayerChart'
 import availableSeasons from '../stats/availableSeasons'
+import PlayerPics from '../assets/PlayerPics';
 
 type State = {
-  currentSeason: string,
-  width: number
+  currentSeason: string
 }
 
 type Props = {
@@ -17,18 +17,10 @@ type Props = {
 
 export default class App extends React.Component<Props, State> {
 
-  updateDimensions = () => {
-    this.setState({
-      width: Math.min(window.innerWidth * 0.9, 800)
-    })
-  }
-
   componentDidMount() {
-    window.addEventListener('resize', this.updateDimensions)
   }
 
   componentWillUnmount() {
-    window.removeEventListener('resize', this.updateDimensions)
   }
 
   changeSeason(season: any) {
@@ -51,8 +43,7 @@ export default class App extends React.Component<Props, State> {
   constructor(props) {
     super(props)
     this.state = {
-      currentSeason: Object.keys(availableSeasons)[0],
-      width: Math.min(window.innerWidth * 0.9, 800)
+      currentSeason: Object.keys(availableSeasons)[0]
     }
   }
 
@@ -68,7 +59,6 @@ export default class App extends React.Component<Props, State> {
             field='goals'
             data={availableSeasons[this.state.currentSeason]}
             height={300}
-            width={this.state.width}
             N={5}
           />
           <hr />
@@ -76,13 +66,14 @@ export default class App extends React.Component<Props, State> {
             field='assists'
             data={availableSeasons[this.state.currentSeason]}
             height={300}
-            width={this.state.width}
             N={5}
           />
           <hr />
           <GameHistory
             data={availableSeasons[this.state.currentSeason]}
             />
+          <img src={PlayerPics.GetPic('JorgeA')} height='480' />
+          <img src={PlayerPics.GetPic('DiegoV')} height='480' />
         </div>
       </div>
     )
