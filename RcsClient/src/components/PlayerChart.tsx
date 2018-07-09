@@ -3,6 +3,8 @@ import './../assets/scss/App.scss'
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts'
 import { IGameData } from '../../GameData/IGameData'
 import getAggregatedPlayerDataForAllGames from '../stats/getAggregatedPlayerData'
+import CustomBarLabel from './CustomBarLabel'
+import CustomAxisTick from './CustomAxisTick';
 
 type State = {
 }
@@ -25,10 +27,10 @@ export default class PlayerChart extends React.Component<Props, State> {
                 <ResponsiveContainer width='100%' height={this.props.height}>
                     <BarChart data={dataForChart} >
                         <CartesianGrid strokeDasharray='3 3' />
-                        <XAxis dataKey='name' />
+                        <XAxis dataKey='name' tick={<CustomAxisTick />} />
                         <YAxis />
                         <Tooltip />
-                        <Bar dataKey={ this.props.field } fill='#f49542' />
+                        <Bar dataKey={ this.props.field } fill='#f49542' label={<CustomBarLabel field={this.props.field}/>} />
                     </BarChart>
                 </ResponsiveContainer>
             </>

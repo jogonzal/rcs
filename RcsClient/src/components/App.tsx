@@ -6,7 +6,6 @@ import NavBar from './NavBar'
 import GameHistory from './GameHistory'
 import PlayerChart from './PlayerChart'
 import availableSeasons from '../stats/availableSeasons'
-import PlayerPics from '../assets/PlayerPics';
 
 type State = {
   currentSeason: string
@@ -72,8 +71,6 @@ export default class App extends React.Component<Props, State> {
           <GameHistory
             data={availableSeasons[this.state.currentSeason]}
             />
-          <img src={PlayerPics.GetPic('JorgeA')} height='480' />
-          <img src={PlayerPics.GetPic('DiegoV')} height='480' />
         </div>
       </div>
     )
