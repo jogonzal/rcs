@@ -1,5 +1,5 @@
 import * as React from 'react'
-import PlayerPics from '../assets/PlayerPics';
+import PlayerPics from '../assets/PlayerPics'
 
 const CustomAxisTick = (props) => {
     const { x, y, payload, width } = props

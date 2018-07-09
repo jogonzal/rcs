@@ -12,9 +12,11 @@ export type PlayerName = 'AndreasH' |
 'MattMC'|
 'MattR'|
 'NicoS'|
+'Nimish'|
 'RaymondO'|
 'ScottO'|
 'UmairA'|
+'Ville'|
 'Khalef'
 
 export interface IPlayerGameData {

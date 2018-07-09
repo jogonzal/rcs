@@ -1,30 +1,51 @@
 import { PlayerName } from '../../GameData/IGameData'
 
-const jorgea = require('./img/players/jorgea.png')
+const JorgeA = require('./img/players/jorgea.jpg')
+const DineshV = require('./img/players/dineshv.jpg')
+const JordanH = require('./img/players/jordanh.png')
+const JorgeM = require('./img/players/jorgem.png')
+const MarkT = require('./img/players/markt.png')
+const MattMc = require('./img/players/mattmc.png')
+const MattR = require('./img/players/mattr.png')
+const NicoS = require('./img/players/nicos.png')
+const Nimish = require('./img/players/nimish.jpg')
+const RaymondO = require('./img/players/raymondo.png')
+const Ville = require('./img/players/ville.jpg')
+const DiegoV = require('./img/players/diegov.png')
+const MattA = require('./img/players/MattA.jpg')
+
 const unknown = require('./img/players/unknown.png')
 
 export default class PlayerPics {
     public static GetPic(player: PlayerName) {
         switch (player) {
             case 'JorgeA':
-                return jorgea
-            case 'AndreasH':
-            case 'ChrisB':
-            case 'DiegoV':
+                return JorgeA
             case 'DineshV':
+                return DineshV
             case 'JordanH':
-            case 'JasonR':
+                return JordanH
             case 'JorgeM':
+                return JorgeM
             case 'MarkT':
-            case 'MartinM':
-            case 'MattA':
+                return MarkT
             case 'MattMC':
+                return MattMc
             case 'MattR':
+                return MattR
             case 'NicoS':
+                return NicoS
+            case 'Nimish':
+                return Nimish
             case 'RaymondO':
-            case 'ScottO':
-            case 'UmairA':
-            case 'Khalef':
+                return RaymondO
+            case 'Ville':
+                return Ville
+            case 'DiegoV':
+                return DiegoV
+            case 'MattA':
+                return MattA
+            default:
                 return unknown
         }
     }
