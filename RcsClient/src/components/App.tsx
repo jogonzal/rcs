@@ -48,7 +48,7 @@ export default class App extends React.Component<Props, State> {
 
   render() {
     return (
-      <div>
+      <div style={{minWidth: '500px'}}>
         <NavBar />
         <div className='container'>
           <div>{this.renderSeasonButtons()}</div>
