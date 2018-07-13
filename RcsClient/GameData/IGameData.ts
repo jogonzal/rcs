@@ -20,9 +20,10 @@ export type PlayerName = 'AndreasH' |
 'Khalef'
 
 export interface IPlayerGameData {
-    Goals: number
-    Assists: number
+    Goals?: number
+    Assists?: number
     Comment?: string
+    Pitchers?: number
 }
 
 export interface IGameData {

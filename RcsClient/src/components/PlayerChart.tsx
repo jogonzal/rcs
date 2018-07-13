@@ -4,7 +4,7 @@ import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContaine
 import { IGameData } from '../../GameData/IGameData'
 import getAggregatedPlayerDataForAllGames from '../stats/getAggregatedPlayerData'
 import CustomBarLabel from './CustomBarLabel'
-import CustomAxisTick from './CustomAxisTick';
+import CustomAxisTick from './CustomAxisTick'
 
 type State = {
 }
@@ -24,11 +24,11 @@ export default class PlayerChart extends React.Component<Props, State> {
         return (
             <>
                 <h2>Top {this.props.N} {this.props.field}</h2>
-                <ResponsiveContainer width='100%' height={this.props.height}>
+                <ResponsiveContainer width='100%' height={this.props.height} >
                     <BarChart data={dataForChart} >
                         <CartesianGrid strokeDasharray='3 3' />
                         <XAxis dataKey='name' tick={<CustomAxisTick />} />
-                        <YAxis />
+                        <YAxis domain={[0, 'dataMax + 1']}/>
                         <Tooltip />
                         <Bar dataKey={ this.props.field } fill='#f49542' label={<CustomBarLabel field={this.props.field}/>} />
                     </BarChart>

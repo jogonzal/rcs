@@ -4,20 +4,26 @@ import { PlayerName, IPlayerGameData, IGameData } from '../../GameData/IGameData
 export interface IAggregatedPlayerData {
     name: string,
     goals: number,
-    assists: number
+    assists: number,
+    pitchers: number,
+    games: number
+}
+
+function transformToNumber(num?: number) {
+    return num ? num : 0
 }
 
 export function getAggregatedPlayerDataForGame(playerData: { [key in PlayerName]?: IPlayerGameData }): IAggregatedPlayerData[] {
     let dataToReturn: IAggregatedPlayerData[] = []
     for (const playerName of Object.keys(playerData)) {
         const currentPlayerData: IPlayerGameData = playerData[playerName]
-        if (currentPlayerData.Assists === 0 && currentPlayerData.Goals === 0) {
-            continue
-        }
+
         const aggregatedPlayerData: IAggregatedPlayerData = {
             name: playerName,
-            goals: currentPlayerData.Goals,
-            assists: currentPlayerData.Assists
+            goals: transformToNumber(currentPlayerData.Goals),
+            assists: transformToNumber(currentPlayerData.Assists),
+            pitchers: transformToNumber(currentPlayerData.Pitchers),
+            games: 1
         }
         dataToReturn.push(aggregatedPlayerData)
     }
@@ -25,30 +31,30 @@ export function getAggregatedPlayerDataForGame(playerData: { [key in PlayerName]
 }
 
 export default function getAggregatedPlayerDataForAllGames(games: IGameData[], orderBy: 'goals' | 'assists', n: number) {
-    const accumulatedScoresAndAssists: { [key in PlayerName]?: IPlayerGameData } = {}
+    const accumulatedPlayerData: { [key in PlayerName]?: IAggregatedPlayerData } = {}
     for (const game of games) {
-        for (const playerName of Object.keys(game.PlayerStats)) {
-            const newGameData: IPlayerGameData = game.PlayerStats[playerName]
-            const newGameDataGoals = newGameData.Goals ? newGameData.Goals : 0
-            const newGameDataAssists = newGameData.Assists ? newGameData.Assists : 0
-
-            const existingGameData: IPlayerGameData = accumulatedScoresAndAssists[playerName]
+        const aggregatedGamePlayerData = getAggregatedPlayerDataForGame(game.PlayerStats)
+        for (const playerGameData of aggregatedGamePlayerData) {
+            const existingGameData: IAggregatedPlayerData = accumulatedPlayerData[playerGameData.name]
             if (existingGameData) {
-                existingGameData.Goals += newGameDataGoals,
-                existingGameData.Assists += newGameDataAssists
+                existingGameData.goals += playerGameData.goals
+                existingGameData.assists += playerGameData.assists
+                existingGameData.pitchers += playerGameData.pitchers
+                existingGameData.games += playerGameData.games
             } else {
-                const gameDataToSet: IPlayerGameData = {
-                    Goals: newGameDataGoals,
-                    Assists: newGameDataAssists
+                const gameDataToSet: IAggregatedPlayerData = {
+                    goals: playerGameData.goals,
+                    assists: playerGameData.assists,
+                    pitchers: playerGameData.pitchers,
+                    games: playerGameData.games,
+                    name: playerGameData.name
                 }
-                accumulatedScoresAndAssists[playerName] = gameDataToSet
+                accumulatedPlayerData[playerGameData.name] = gameDataToSet
             }
         }
     }
 
-    const aggregatedPlayerDataForAllGames: IAggregatedPlayerData[] = getAggregatedPlayerDataForGame(accumulatedScoresAndAssists)
-
-    let newData = _.orderBy(aggregatedPlayerDataForAllGames, [orderBy], ['desc'])
+    let newData = _.orderBy(accumulatedPlayerData, [orderBy], ['desc'])
     newData = _.take(newData, n)
     return newData
 }
