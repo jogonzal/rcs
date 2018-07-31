@@ -52,6 +52,26 @@ const summer2018Data: IGameData[] =
             Nimish: { }
         }
     },
+    {
+        Opponent: 'Costco team in Issaquah',
+        Date: '7/25/2018',
+        GoalsInFavor: 11,
+        GoalsAgainst: 4,
+        Notes: 'We played well and were better than them - Mark, Malte especially had a great game.',
+        PlayerStats:
+        {
+            Malte: { 'Assists': 2, 'Goals': 3 },
+            DiegoV: { 'Assists': 1, 'Goals': 1 },
+            DineshV: { 'Goals': 1, 'Assists': 1 },
+            JorgeA: { 'Goals': 2, 'Pitchers': 2 },
+            MarkT: { 'Goals': 2, 'Assists': 2 },
+            MattR: { 'Pitchers': 1, 'Assists': 3 },
+            UmairA: { 'Goals': 1, 'Assists': 2 },
+            Nimish: { },
+            MartinM: { },
+            JasonR: { 'Assists': 1 }
+        }
+    },
 ]
 
 export default summer2018Data

@@ -15,6 +15,7 @@ const DiegoV = require('./img/players/diegov.png')
 const MattA = require('./img/players/MattA.jpg')
 const ChrisB = require('./img/players/ChrisB.png')
 const Umair = require('./img/players/Umair.jpg')
+const Malte = require('./img/players/Malte.jpg')
 
 const unknown = require('./img/players/unknown.png')
 
@@ -51,6 +52,8 @@ export default class PlayerPics {
                 return ChrisB
             case 'UmairA':
                 return Umair
+            case 'Malte':
+                return Malte
             default:
                 return unknown
         }
