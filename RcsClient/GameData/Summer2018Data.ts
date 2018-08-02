@@ -72,6 +72,46 @@ const summer2018Data: IGameData[] =
             JasonR: { 'Assists': 1 }
         }
     },
+    {
+        Opponent: 'NSI',
+        Date: '8/1/2018',
+        GoalsInFavor: 1,
+        GoalsAgainst: 2,
+        Notes: 'We overcommitted on offense and got countered many times. We struggled to finish our plays on offense.',
+        PlayerStats:
+        {
+            DiegoV: {},
+            JorgeA: {},
+            DineshV: { 'Goals': 1 },
+            MattR: { 'Pitchers': 1 },
+            UmairA: {},
+            Nimish: { },
+            JasonR: {},
+            RaymondO: {},
+            ChrisB: {},
+            MarkT: {}
+        }
+    },
+    {
+        Opponent: 'Dacii',
+        Date: '8/1/2018',
+        GoalsInFavor: 6,
+        GoalsAgainst: 4,
+        Notes: 'We played well, but got countered many times 2v1. We were a bit lucky on those.',
+        PlayerStats:
+        {
+            DiegoV: { Goals: 1 },
+            JorgeA: { Goals: 2 },
+            DineshV: { Goals: 1 },
+            MattR: { Assists: 1 },
+            UmairA: { Assists: 1 },
+            Nimish: { Assists: 1 },
+            JasonR: { Goals: 1 },
+            RaymondO: { Assists: 2 },
+            ChrisB: {},
+            MarkT: { Assists: 1, Goals: 1 }
+        }
+    }
 ]
 
 export default summer2018Data
