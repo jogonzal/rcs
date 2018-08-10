@@ -126,7 +126,7 @@ const summer2018Data: IGameData[] =
             Ville: { Assists: 1 },
             Nimish: { Assists: 1, Pitchers: 1 },
             UmairA: { Assists: 2 },
-            DineshV: { BlueCards: 1, Pitchers: 1  },
+            DineshV: { BlueCards: 1, Pitchers: 1, Assists: 1 },
             MattR: { Goals: 1, Assists: 1 },
             MarkT: { Goals: 2, Assists: 1 }
         }
