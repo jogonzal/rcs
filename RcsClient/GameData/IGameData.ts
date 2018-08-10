@@ -25,6 +25,7 @@ export interface IPlayerGameData {
     Assists?: number
     Comment?: string
     Pitchers?: number
+    BlueCards?: number
 }
 
 export interface IGameData {

@@ -111,6 +111,25 @@ const summer2018Data: IGameData[] =
             ChrisB: {},
             MarkT: { Assists: 1, Goals: 1 }
         }
+    },
+    {
+        Opponent: 'Yugo',
+        Date: '8/9/2018',
+        GoalsInFavor: 7,
+        GoalsAgainst: 7,
+        Notes: 'We did not defend well, but showed great spirit and came back from a 4-7.',
+        PlayerStats:
+        {
+            DiegoV: { Goals: 1 },
+            JorgeA: { Goals: 2, Assists: 1 },
+            JasonR: { Goals: 1 },
+            Ville: { Assists: 1 },
+            Nimish: { Assists: 1, Pitchers: 1 },
+            UmairA: { Assists: 2 },
+            DineshV: { Assists: 1, BlueCards: 1, Pitchers: 1  },
+            MattR: { Goals: 1, Assists: 1 },
+            MarkT: { Goals: 2, Assists: 2 }
+        }
     }
 ]
 
