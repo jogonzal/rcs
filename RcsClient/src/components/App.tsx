@@ -68,6 +68,20 @@ export default class App extends React.Component<Props, State> {
             N={5}
           />
           <hr />
+          <PlayerChart
+            field='blueCards'
+            data={availableSeasons[this.state.currentSeason]}
+            height={300}
+            N={5}
+          />
+          <hr />
+          <PlayerChart
+            field='pitchers'
+            data={availableSeasons[this.state.currentSeason]}
+            height={300}
+            N={5}
+          />
+          <hr />
           <GameHistory
             data={availableSeasons[this.state.currentSeason]}
             />
