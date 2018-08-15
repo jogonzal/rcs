@@ -40,7 +40,7 @@ const summer2018Data: IGameData[] =
         Notes: 'This is the second game we lose against the Pot - they have a strong indoor team - Josh and Carlos have speed and they got us on many counters. Next time we should focus on finishing our plays and not push all of our players to their side of the field.',
         PlayerStats:
         {
-            ChrisB: { },
+            ChrisB: { Assists: 1 },
             DiegoV: { 'Assists': 1 },
             DineshV: { 'Goals': 1 },
             JorgeA: { 'Goals': 1 },
@@ -88,7 +88,7 @@ const summer2018Data: IGameData[] =
             Nimish: { },
             JasonR: {},
             RaymondO: {},
-            ChrisB: {},
+            ChrisB: { Assists: 1 },
             MarkT: {}
         }
     },
@@ -108,7 +108,7 @@ const summer2018Data: IGameData[] =
             Nimish: { Assists: 1 },
             JasonR: { Goals: 1 },
             RaymondO: { Assists: 2 },
-            ChrisB: {},
+            ChrisB: { Assists: 1 },
             MarkT: { Assists: 1, Goals: 1 }
         }
     },
