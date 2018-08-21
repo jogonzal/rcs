@@ -130,6 +130,21 @@ const summer2018Data: IGameData[] =
             MattR: { Goals: 1, Assists: 1 },
             MarkT: { Goals: 2, Assists: 1 }
         }
+    },
+    {
+        Opponent: 'Torpedo Gopota',
+        Date: '8/15/2018',
+        GoalsInFavor: 4,
+        GoalsAgainst: 6,
+        Notes: '',
+        PlayerStats:
+        {
+            Ville: { Goals: 1, Pitchers: 1 },
+            MattR: { Assists: 1 },
+            MarkT: { Goals: 1 },
+            ChrisB: { Assists: 1 },
+            AndreasH: { Goals: 1 }
+        }
     }
 ]
 
