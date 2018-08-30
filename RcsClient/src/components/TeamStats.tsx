@@ -5,13 +5,15 @@ import './../assets/scss/App.scss'
 import NavBar from './NavBar'
 import GameHistory from './GameHistory'
 import PlayerChart from './PlayerChart'
-import rcsIndoorSeasons from '../stats/rcsIndoorSeasons'
+import { IGameData } from '../../GameData/IGameData'
 
 type State = {
   currentSeason: string
 }
 
 type Props = {
+  teamSeasons: { [key: string]: IGameData[] }
+  teamName: string
 }
 
 export default class App extends React.Component<Props, State> {
@@ -31,7 +33,7 @@ export default class App extends React.Component<Props, State> {
   }
 
   renderSeasonButtons = () => {
-    const arr = Object.keys(rcsIndoorSeasons)
+    const arr = Object.keys(this.props.teamSeasons)
     return arr.map(season => (
       <>
         <button className='btn btn-info' onClick={this.changeSeason(season)} >{season}</button> |
@@ -42,7 +44,7 @@ export default class App extends React.Component<Props, State> {
   constructor(props) {
     super(props)
     this.state = {
-      currentSeason: Object.keys(rcsIndoorSeasons)[0]
+      currentSeason: Object.keys(this.props.teamSeasons)[0]
     }
   }
 
@@ -52,38 +54,39 @@ export default class App extends React.Component<Props, State> {
         <NavBar />
         <div className='container'>
           <div>{this.renderSeasonButtons()}</div>
+          <h1>{this.props.teamName}</h1>
           <hr />
           <h1>Stats for {this.state.currentSeason}</h1>
           <PlayerChart
             field='goals'
-            data={rcsIndoorSeasons[this.state.currentSeason]}
+            data={this.props.teamSeasons[this.state.currentSeason]}
             height={300}
             N={5}
           />
           <hr />
           <PlayerChart
             field='assists'
-            data={rcsIndoorSeasons[this.state.currentSeason]}
+            data={this.props.teamSeasons[this.state.currentSeason]}
             height={300}
             N={5}
           />
           <hr />
           <PlayerChart
             field='blueCards'
-            data={rcsIndoorSeasons[this.state.currentSeason]}
+            data={this.props.teamSeasons[this.state.currentSeason]}
             height={300}
             N={5}
           />
           <hr />
           <PlayerChart
             field='pitchers'
-            data={rcsIndoorSeasons[this.state.currentSeason]}
+            data={this.props.teamSeasons[this.state.currentSeason]}
             height={300}
             N={5}
           />
           <hr />
           <GameHistory
-            data={rcsIndoorSeasons[this.state.currentSeason]}
+            data={this.props.teamSeasons[this.state.currentSeason]}
             />
         </div>
       </div>
