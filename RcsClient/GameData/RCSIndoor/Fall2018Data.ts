@@ -1,5 +1,5 @@
 // tslint:disable:indent
-import { IGameData } from './IGameData'
+import { IGameData } from '../IGameData'
 
 // {
 // 	Opponent: 'COPYPASTETHISONE',
@@ -30,7 +30,7 @@ import { IGameData } from './IGameData'
 // 	}
 // },
 
-const summer2018Data: IGameData[] =
+const fall2018Data: IGameData[] =
 [
 	{
         Opponent: 'The Pot',
@@ -68,4 +68,4 @@ const summer2018Data: IGameData[] =
     },
 ]
 
-export default summer2018Data
+export default fall2018Data

@@ -1,7 +1,7 @@
 import * as React from 'react'
 import './../assets/scss/App.scss'
 import NavBar from './NavBar'
-import availableSeasons from '../stats/availableSeasons'
+import rcsIndoorSeasons from '../stats/rcsIndoorSeasons'
 
 const RawData = () => (
   <div>
@@ -9,7 +9,7 @@ const RawData = () => (
     <div className='container'>
         <p>Not sure why you'd want this, but here it is:</p>
         <pre>
-            {JSON.stringify(availableSeasons, undefined, 2)}
+            {JSON.stringify(rcsIndoorSeasons, undefined, 2)}
         </pre>
     </div>
   </div>

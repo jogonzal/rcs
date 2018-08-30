@@ -5,7 +5,7 @@ import './../assets/scss/App.scss'
 import NavBar from './NavBar'
 import GameHistory from './GameHistory'
 import PlayerChart from './PlayerChart'
-import availableSeasons from '../stats/availableSeasons'
+import rcsIndoorSeasons from '../stats/rcsIndoorSeasons'
 
 type State = {
   currentSeason: string
@@ -31,7 +31,7 @@ export default class App extends React.Component<Props, State> {
   }
 
   renderSeasonButtons = () => {
-    const arr = Object.keys(availableSeasons)
+    const arr = Object.keys(rcsIndoorSeasons)
     return arr.map(season => (
       <>
         <button className='btn btn-info' onClick={this.changeSeason(season)} >{season}</button> |
@@ -42,7 +42,7 @@ export default class App extends React.Component<Props, State> {
   constructor(props) {
     super(props)
     this.state = {
-      currentSeason: Object.keys(availableSeasons)[0]
+      currentSeason: Object.keys(rcsIndoorSeasons)[0]
     }
   }
 
@@ -56,34 +56,34 @@ export default class App extends React.Component<Props, State> {
           <h1>Stats for {this.state.currentSeason}</h1>
           <PlayerChart
             field='goals'
-            data={availableSeasons[this.state.currentSeason]}
+            data={rcsIndoorSeasons[this.state.currentSeason]}
             height={300}
             N={5}
           />
           <hr />
           <PlayerChart
             field='assists'
-            data={availableSeasons[this.state.currentSeason]}
+            data={rcsIndoorSeasons[this.state.currentSeason]}
             height={300}
             N={5}
           />
           <hr />
           <PlayerChart
             field='blueCards'
-            data={availableSeasons[this.state.currentSeason]}
+            data={rcsIndoorSeasons[this.state.currentSeason]}
             height={300}
             N={5}
           />
           <hr />
           <PlayerChart
             field='pitchers'
-            data={availableSeasons[this.state.currentSeason]}
+            data={rcsIndoorSeasons[this.state.currentSeason]}
             height={300}
             N={5}
           />
           <hr />
           <GameHistory
-            data={availableSeasons[this.state.currentSeason]}
+            data={rcsIndoorSeasons[this.state.currentSeason]}
             />
         </div>
       </div>

@@ -1,5 +1,5 @@
 // tslint:disable:indent
-import { IGameData } from './IGameData'
+import { IGameData } from '../IGameData'
 
 // {
 // 	Opponent: 'COPYPASTETHISONE',
