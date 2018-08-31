@@ -27,7 +27,7 @@ export default class HomePage extends React.Component<Props, State> {
         <br />
         <br />
         <Link href='/rcsindoor' >
-            <button className='btn btn-info'>RCS inddoor</button>
+            <button className='btn btn-info'>RCS indoor</button>
         </Link>
         </div>
       </div>
