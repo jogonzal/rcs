@@ -3,10 +3,7 @@ import * as React from 'react'
 import './../assets/scss/App.scss'
 
 import NavBar from './NavBar'
-import GameHistory from './GameHistory'
-import PlayerChart from './PlayerChart'
-import { IGameData } from '../../GameData/IGameData'
-import Link from './Link';
+import Link from './Link'
 
 type State = {
 }
