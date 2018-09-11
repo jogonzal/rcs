@@ -53,6 +53,20 @@ const fall2018Data: IGameData[] =
             Mahmoud: { Goals: 2 },
             MattMC: { Assists: 1 }
         }
+    },
+	{
+        Opponent: 'Stone',
+        Date: '09/04/2018',
+        GoalsInFavor: 2,
+        GoalsAgainst: 0,
+        Notes: '',
+        PlayerStats:
+        {
+            Mahmoud: { Goals: 1 },
+            Colton: { Goals: 1 },
+            MattMC: { Assists: 1 },
+            MarkT: { Assists: 1 }
+        }
     }
 ]
 
