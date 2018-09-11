@@ -13,13 +13,16 @@ type Props = {
     data: IGameData[]
     height: number
     N: number,
-    field: 'goals' | 'assists' | 'blueCards' | 'pitchers'
+    field: 'goals' | 'assists' | 'blueCards' | 'pitchers' | 'cleansheets'
 }
 
 export default class PlayerChart extends React.Component<Props, State> {
-    private getTitleLabel(field: 'goals' | 'assists' | 'blueCards' | 'pitchers') {
+    private getTitleLabel(field: 'goals' | 'assists' | 'blueCards' | 'pitchers' | 'cleansheets') {
         if (field === 'blueCards') {
             return 'blue cards'
+        }
+        if (field === 'cleansheets') {
+            return 'clean sheets'
         }
         return field
     }

@@ -33,7 +33,7 @@ import { IGameData } from '../IGameData'
 const fall2018Data: IGameData[] =
 [
 	{
-        Opponent: 'The Pot',
+        Opponent: 'Yugo',
         Date: '8/22/2018',
         GoalsInFavor: 9,
         GoalsAgainst: 3,
@@ -53,7 +53,7 @@ const fall2018Data: IGameData[] =
         Date: '8/29/2018',
         GoalsInFavor: 4,
         GoalsAgainst: 3,
-        Notes: 'We defended pretty well, except towards the end when they. The Pot had a few ringers, but we still managed to win.',
+        Notes: 'We defended pretty well, except towards the end when they attacked pretty intensely. The Pot had a few ringers, but we still managed to win.',
         PlayerStats:
         {
 			LuisFelipe: { Goals: 1 },
@@ -64,6 +64,23 @@ const fall2018Data: IGameData[] =
 			MattA: { Pitchers: 1 },
 			JorgeA: { Pitchers: 1 },
 			MattR: { Pitchers: 1 }
+        }
+    },
+    {
+        Opponent: 'En fuego',
+        Date: '8/29/2018',
+        GoalsInFavor: 9,
+        GoalsAgainst: 0,
+        Notes: 'This was an easy game.',
+        PlayerStats:
+        {
+            ChrisB: { CleanSheets: 1 },
+            DiegoV: { Goals: 2, Pitchers: 1 },
+            MartinM: { Assists: 3, Goals: 2 },
+            JorgeA: { Goals: 2 },
+            Nimish: { Goals: 1 },
+            MattR: { Goals: 1 },
+            MarkT: { Assists: 2, Goals: 1 }
         }
     },
 ]

@@ -7,6 +7,7 @@ export interface IAggregatedPlayerData {
     assists: number,
     pitchers: number,
     blueCards: number,
+    cleanSheets: number,
     games: number
 }
 
@@ -25,6 +26,7 @@ export function getAggregatedPlayerDataForGame(playerData: { [key in PlayerName]
             assists: transformToNumber(currentPlayerData.Assists),
             pitchers: transformToNumber(currentPlayerData.Pitchers),
             blueCards: transformToNumber(currentPlayerData.BlueCards),
+            cleanSheets: transformToNumber(currentPlayerData.CleanSheets),
             games: 1
         }
         dataToReturn.push(aggregatedPlayerData)
@@ -32,7 +34,7 @@ export function getAggregatedPlayerDataForGame(playerData: { [key in PlayerName]
     return dataToReturn
 }
 
-export default function getAggregatedPlayerDataForAllGames(games: IGameData[], orderBy: 'goals' | 'assists' | 'blueCards' | 'pitchers', n: number) {
+export default function getAggregatedPlayerDataForAllGames(games: IGameData[], orderBy: 'goals' | 'assists' | 'blueCards' | 'pitchers' | 'cleansheets', n: number) {
     const accumulatedPlayerData: { [key in PlayerName]?: IAggregatedPlayerData } = {}
     for (const game of games) {
         const aggregatedGamePlayerData = getAggregatedPlayerDataForGame(game.PlayerStats)
@@ -44,6 +46,7 @@ export default function getAggregatedPlayerDataForAllGames(games: IGameData[], o
                 existingGameData.pitchers += playerGameData.pitchers
                 existingGameData.games += playerGameData.games
                 existingGameData.blueCards += playerGameData.blueCards
+                existingGameData.cleanSheets += playerGameData.cleanSheets
             } else {
                 const gameDataToSet: IAggregatedPlayerData = {
                     goals: playerGameData.goals,
@@ -51,6 +54,7 @@ export default function getAggregatedPlayerDataForAllGames(games: IGameData[], o
                     pitchers: playerGameData.pitchers,
                     games: playerGameData.games,
                     blueCards: playerGameData.blueCards,
+                    cleanSheets: playerGameData.cleanSheets,
                     name: playerGameData.name
                 }
                 accumulatedPlayerData[playerGameData.name] = gameDataToSet

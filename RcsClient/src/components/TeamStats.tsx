@@ -84,6 +84,12 @@ export default class App extends React.Component<Props, State> {
             height={300}
             N={5}
           />
+          <PlayerChart
+            field='cleansheets'
+            data={this.props.teamSeasons[this.state.currentSeason]}
+            height={300}
+            N={5}
+          />
           <hr />
           <GameHistory
             data={this.props.teamSeasons[this.state.currentSeason]}
