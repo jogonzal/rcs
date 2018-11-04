@@ -1,12 +1,12 @@
 import * as React from 'react'
 import 'bootstrap/scss/bootstrap.scss'
 import 'bootstrap/dist/js/bootstrap.bundle.min.js'
-import Link from './Link'
+import { Link } from 'react-router-dom'
 
 const NavBar = () => (
     <>
     <nav className='navbar navbar-expand-lg navbar-light bg-light'>
-        <Link href='/' className='navbar brand'>
+        <Link to='/' className='navbar brand'>
             RCS
         </Link>
         <button className='navbar-toggler' type='button' data-toggle='collapse' data-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation'>
@@ -16,12 +16,12 @@ const NavBar = () => (
         <div className='collapse navbar-collapse' id='navbarSupportedContent'>
             <ul className='navbar-nav mr-auto'>
                 <li className='nav-item active'>
-                    <Link href='/' className='nav-link' >
+                    <Link to='/' className='nav-link' >
                         Home
                     </Link>
                 </li>
                 <li className='nav-item'>
-                    <Link href='/rawdata' className='nav-link' >
+                    <Link to='/rawdata' className='nav-link' >
                         Raw data
                     </Link>
                 </li>

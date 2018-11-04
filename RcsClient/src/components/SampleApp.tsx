@@ -3,8 +3,8 @@ const reactLogo = require('./../assets/img/react_logo.svg')
 import './../assets/scss/App.scss'
 import Clock from './Clock'
 import Toggle from './Toggle'
-import Link from './Link'
 import NavBar from './NavBar'
+import { Link } from 'react-router-dom'
 
 const SampleApp = () => (
   <div>
@@ -16,7 +16,7 @@ const SampleApp = () => (
     <Clock input={'JORGE CLOCK 2'} />
     <Clock input={'JORGE CLOCK 3'} />
     <Toggle />
-    <Link href='/tasks' >
+    <Link to='/tasks' >
       <p>Please click me!</p>
     </Link>
   </div>

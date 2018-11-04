@@ -1,28 +1,28 @@
-// import * as React from 'react'
-// import {render} from 'react-dom'
-// import App from './components/App'
+import * as React from 'react'
+import {render} from 'react-dom'
+import { HashRouter, Link, Route } from 'react-router-dom'
+import HomePage from './components/HomePage'
+import TeamStats from './components/TeamStats'
 
-// const rootEl = document.getElementById('root')
+import Tasks from './components/Tasks'
+import RawData from './components/RawData'
+import SampleApp from './components/SampleApp'
+import rcsIndoorSeasons from './stats/rcsIndoorSeasons'
+import rcsOutdoorSeasons from './stats/rcsOutdoorSeasons'
 
-// render(
-//     <App/>,
-//     rootEl
-// )
+const rootEl = document.getElementById('root')
 
-import * as ReactDOM from 'react-dom'
-import history from './components/history'
-import router from './components/router'
-import routes from './components/routes'
+render(
+  <HashRouter>
+    <div>
+      <Route exact path='/' component={HomePage} />
+      <Route exact path='/rcsindoor' render={() => <TeamStats teamName='RCS indoor' teamSeasons={rcsIndoorSeasons} />} />
+      <Route exact path='/rcsoutdoor' render={() => <TeamStats teamName='RCS outdoor' teamSeasons={rcsOutdoorSeasons} />} />
+      <Route exact path='/tasks' component={Tasks} />
+      <Route exact path='/sampleApp' component={SampleApp} />
+      <Route exact path='/rawData' component={RawData} />
 
-const container = document.getElementById('root')
-function renderComponent(component) {
-  ReactDOM.render(component, container)
-}
-function render(location) {
-  router.resolve(routes, location)
-    .then(renderComponent)
-    .catch(error => router.resolve(routes, { ...location, error })
-    .then(renderComponent))
-}
-render(history.location) // render the current URL
-history.listen(render)               // render subsequent URLs
+    </div>
+  </HashRouter>,
+  rootEl
+)

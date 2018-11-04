@@ -3,7 +3,7 @@ import * as React from 'react'
 import './../assets/scss/App.scss'
 
 import NavBar from './NavBar'
-import Link from './Link'
+import { Link } from 'react-router-dom'
 
 type State = {
 }
@@ -21,12 +21,12 @@ export default class HomePage extends React.Component<Props, State> {
       <div style={{minWidth: '500px'}}>
         <NavBar />
         <div className='container'>
-        <Link href='/rcsoutdoor' >
+        <Link to='/rcsoutdoor' >
             <button className='btn btn-info'>RCS outdoor</button>
         </Link>
         <br />
         <br />
-        <Link href='/rcsindoor' >
+        <Link to='/rcsindoor' >
             <button className='btn btn-info'>RCS indoor</button>
         </Link>
         </div>
