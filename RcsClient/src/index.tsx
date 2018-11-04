@@ -9,6 +9,7 @@ import RawData from './components/RawData'
 import SampleApp from './components/SampleApp'
 import rcsIndoorSeasons from './stats/rcsIndoorSeasons'
 import rcsOutdoorSeasons from './stats/rcsOutdoorSeasons'
+import BabelTest from './components/BabelTest'
 
 const rootEl = document.getElementById('root')
 
@@ -21,6 +22,7 @@ render(
       <Route exact path='/tasks' component={Tasks} />
       <Route exact path='/sampleApp' component={SampleApp} />
       <Route exact path='/rawData' component={RawData} />
+      <Route exact path='/babelTest' component={BabelTest} />
 
     </div>
   </HashRouter>,
