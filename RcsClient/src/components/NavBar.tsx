@@ -1,6 +1,4 @@
 import * as React from 'react'
-import 'bootstrap/scss/bootstrap.scss'
-import 'bootstrap/dist/js/bootstrap.bundle.min.js'
 import { Link } from 'react-router-dom'
 
 const NavBar = () => (
