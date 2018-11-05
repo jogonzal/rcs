@@ -83,5 +83,16 @@ module.exports = {
       'Access-Control-Expose-Headers': '*'
     }
   },
-  devtool: 'source-map'
+  devtool: 'source-map',
+  optimization: {
+    splitChunks: {
+      cacheGroups: {
+          commons: {
+            test: /[\\/]node_modules[\\/]/,
+            name: "vendor",
+            chunks: "all"
+          },
+      }
+    },
+  },
 };
