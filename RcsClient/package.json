@@ -44,6 +44,7 @@
     "@types/node": "^10.3.1",
     "@types/path-to-regexp": "^1.7.0",
     "@types/react": "^16.3.16",
+    "@types/react-bootstrap": "^0.32.14",
     "@types/react-dom": "^16.0.6",
     "@types/react-router": "^4.4.0",
     "@types/react-router-dom": "^4.3.1",
