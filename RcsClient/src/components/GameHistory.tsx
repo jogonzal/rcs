@@ -3,7 +3,7 @@ import 'bootstrap/scss/bootstrap.scss'
 import 'bootstrap/dist/js/bootstrap.bundle.min.js'
 import { IGameData } from '../../GameData/IGameData'
 import { getAggregatedPlayerDataForGame, IAggregatedPlayerData } from '../stats/getAggregatedPlayerData'
-import _ = require('lodash')
+import * as _ from 'lodash'
 
 type State = {
 }

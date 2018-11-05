@@ -11,6 +11,8 @@ import rcsIndoorSeasons from './stats/rcsIndoorSeasons'
 import rcsOutdoorSeasons from './stats/rcsOutdoorSeasons'
 import BabelTest from './components/BabelTest'
 
+import '@babel/polyfill'
+
 const rootEl = document.getElementById('root')
 
 render(
@@ -28,3 +30,9 @@ render(
   </HashRouter>,
   rootEl
 )
+
+// Dynamic import example
+const delayLoadedImport = import('./logSomeStuff')
+delayLoadedImport.then(func => {
+  func.default()
+})
