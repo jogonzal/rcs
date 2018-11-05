@@ -13,6 +13,10 @@ import BabelTest from './components/BabelTest'
 
 import '@babel/polyfill'
 
+import { initializeIcons } from '@uifabric/icons'
+// Register icons and pull the fonts from the default SharePoint CDN:
+initializeIcons()
+
 const rootEl = document.getElementById('root')
 
 render(
