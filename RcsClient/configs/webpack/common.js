@@ -4,6 +4,7 @@ const {CheckerPlugin} = require('awesome-typescript-loader');
 const StyleLintPlugin = require('stylelint-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ScriptExtHtmlWebpackPlugin = require('script-ext-html-webpack-plugin')
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 module.exports = {
   entry: './index.tsx',
@@ -62,6 +63,10 @@ module.exports = {
         }
       ]
     }),
+    new BundleAnalyzerPlugin({
+      analyzerMode: 'static',
+      openAnalyzer: false
+    })
   ],
   performance: {
     hints: false,
