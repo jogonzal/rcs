@@ -1,10 +1,28 @@
 import * as React from 'react'
-import 'bootstrap/scss/bootstrap.scss'
-import 'bootstrap/dist/js/bootstrap.bundle.min.js'
 import { Link } from 'react-router-dom'
+import AppBar from '@material-ui/core/AppBar'
+import Toolbar from '@material-ui/core/Toolbar'
+import Button from '@material-ui/core/Button'
+import IconButton from '@material-ui/core/IconButton'
+
+import MenuIcon from '@material-ui/icons/Menu'
+import Typography from '@material-ui/core/Typography'
 
 const NavBar = () => (
     <>
+      <div>
+      <AppBar position='static'>
+        <Toolbar>
+          <IconButton color='inherit' aria-label='Menu'>
+            <MenuIcon />
+          </IconButton>
+          <Typography variant='h6' color='inherit'>
+            News
+          </Typography>
+          <Button color='inherit'>Login</Button>
+        </Toolbar>
+      </AppBar>
+    </div>
     <nav className='navbar navbar-expand-lg navbar-light bg-light'>
         <Link to='/' className='navbar brand'>
             RCS
