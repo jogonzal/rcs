@@ -1,5 +1,6 @@
-import * as _ from 'lodash'
 import { PlayerName, IPlayerGameData, IGameData } from '../../GameData/IGameData'
+import sortByDimension from './sortByDimension';
+import transformDictionaryIntoObject from './transformDictionaryIntoObject';
 
 export interface IAggregatedPlayerData {
     name: string,
@@ -62,7 +63,9 @@ export default function getAggregatedPlayerDataForAllGames(games: IGameData[], o
         }
     }
 
-    let newData = _.orderBy(accumulatedPlayerData, [orderBy], ['desc'])
-    newData = _.take(newData, n)
-    return newData as any
+    const arr: IAggregatedPlayerData[] = transformDictionaryIntoObject(accumulatedPlayerData) as any
+
+    sortByDimension(arr, orderBy)
+
+    return arr.slice(0, n)
 }

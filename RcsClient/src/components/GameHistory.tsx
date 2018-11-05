@@ -3,7 +3,8 @@ import 'bootstrap/scss/bootstrap.scss'
 import 'bootstrap/dist/js/bootstrap.bundle.min.js'
 import { IGameData } from '../../GameData/IGameData'
 import { getAggregatedPlayerDataForGame, IAggregatedPlayerData } from '../stats/getAggregatedPlayerData'
-import * as _ from 'lodash'
+import transformDictionaryIntoObject from '../stats/transformDictionaryIntoObject';
+import sortByDimension from '../stats/sortByDimension';
 
 type State = {
 }
@@ -24,7 +25,8 @@ export default class GameHistory extends React.Component<Props, State> {
 
     renderRow = (gameData: IGameData, i: number) => {
         const aggregatePlayerStats = getAggregatedPlayerDataForGame(gameData.PlayerStats)
-        const sortedByGoals: IAggregatedPlayerData[] = _.orderBy(aggregatePlayerStats, ['goals'], ['desc'])
+        const sortedByGoals: IAggregatedPlayerData[] = transformDictionaryIntoObject(aggregatePlayerStats) as any
+        sortByDimension(sortedByGoals, 'goals')
 
         const goalsDescriptionArr: string[] = []
         for (const playerStats of sortedByGoals) {
@@ -34,7 +36,8 @@ export default class GameHistory extends React.Component<Props, State> {
             }
         }
 
-        const sortedByAssists: IAggregatedPlayerData[] = _.orderBy(aggregatePlayerStats, ['assists'], ['desc'])
+        const sortedByAssists: IAggregatedPlayerData[] = transformDictionaryIntoObject(aggregatePlayerStats) as any
+        sortByDimension(sortedByAssists, 'assists')
         const assistsDescriptionArr: string[] = []
         for (const playerStats of sortedByAssists) {
             if (playerStats.assists > 0) {
