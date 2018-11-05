@@ -7,16 +7,30 @@ import IconButton from '@material-ui/core/IconButton'
 
 import MenuIcon from '@material-ui/icons/Menu'
 import Typography from '@material-ui/core/Typography'
+import { withStyles, createStyles } from '@material-ui/core/styles'
 
-const NavBar = () => (
+const styles = createStyles({
+  root: {
+    flexGrow: 20,
+  },
+  grow: {
+    flexGrow: 10,
+  },
+  menuButton: {
+    marginLeft: -12,
+    marginRight: 200,
+  },
+})
+
+const NavBar = (classes) => (
     <>
-      <div>
+    <div className={classes.root}>
       <AppBar position='static'>
         <Toolbar>
-          <IconButton color='inherit' aria-label='Menu'>
+          <IconButton className={classes.menuButton} color='inherit' aria-label='Menu'>
             <MenuIcon />
           </IconButton>
-          <Typography variant='h6' color='inherit'>
+          <Typography variant='h6' color='inherit' className={classes.grow}>
             News
           </Typography>
           <Button color='inherit'>Login</Button>
@@ -70,4 +84,4 @@ const NavBar = () => (
     </>
 )
 
-export default NavBar
+export default withStyles(styles)(NavBar)
