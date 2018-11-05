@@ -11,6 +11,9 @@ import rcsIndoorSeasons from './stats/rcsIndoorSeasons'
 import rcsOutdoorSeasons from './stats/rcsOutdoorSeasons'
 import BabelTest from './components/BabelTest'
 
+import '../node_modules/materialize-css/dist/css/materialize.min.css'
+import '../node_modules/materialize-css/dist/js/materialize.min.js'
+
 import '@babel/polyfill'
 
 const rootEl = document.getElementById('root')
@@ -25,7 +28,6 @@ render(
       <Route exact path='/sampleApp' component={SampleApp} />
       <Route exact path='/rawData' component={RawData} />
       <Route exact path='/babelTest' component={BabelTest} />
-
     </div>
   </HashRouter>,
   rootEl
