@@ -6,6 +6,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ScriptExtHtmlWebpackPlugin = require('script-ext-html-webpack-plugin')
 
 module.exports = {
+  entry: './index.tsx',
   resolve: {
     extensions: ['.ts', '.tsx', '.js', '.jsx'],
   },
@@ -76,5 +77,6 @@ module.exports = {
       'Access-Control-Allow-Headers': '*',
       'Access-Control-Expose-Headers': '*'
     }
-  }
+  },
+  devtool: 'source-map'
 };
