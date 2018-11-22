@@ -4,7 +4,7 @@ import './../assets/scss/App.scss'
 
 import NavBar from './NavBar'
 import { Link } from 'react-router-dom'
-
+import { Button } from 'react-bootstrap'
 type State = {
 }
 
@@ -22,12 +22,12 @@ export default class HomePage extends React.Component<Props, State> {
         <NavBar />
         <div className='container'>
         <Link to='/rcsoutdoor' >
-            <button className='btn btn-info'>RCS outdoor</button>
+            <Button className='btn-info'>RCS outdoor</Button>
         </Link>
         <br />
         <br />
         <Link to='/rcsindoor' >
-            <button className='btn btn-info'>RCS indoor</button>
+            <Button className='btn-info'>RCS indoor</Button>
         </Link>
         </div>
       </div>

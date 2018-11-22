@@ -10,6 +10,7 @@ import SampleApp from './components/SampleApp'
 import rcsIndoorSeasons from './stats/rcsIndoorSeasons'
 import rcsOutdoorSeasons from './stats/rcsOutdoorSeasons'
 import BabelTest from './components/BabelTest'
+import NotImplemented from './components/NotImplemented'
 
 import '@babel/polyfill'
 
@@ -25,6 +26,7 @@ render(
       <Route exact path='/sampleApp' component={SampleApp} />
       <Route exact path='/rawData' component={RawData} />
       <Route exact path='/babelTest' component={BabelTest} />
+      <Route exact path='/signin' component={NotImplemented} />
 
     </div>
   </HashRouter>,

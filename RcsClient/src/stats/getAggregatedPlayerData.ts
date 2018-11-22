@@ -1,6 +1,6 @@
 import { PlayerName, IPlayerGameData, IGameData } from '../../GameData/IGameData'
-import sortByDimension from './sortByDimension';
-import transformDictionaryIntoObject from './transformDictionaryIntoObject';
+import sortByDimension from './sortByDimension'
+import transformDictionaryIntoObject from './transformDictionaryIntoObject'
 
 export interface IAggregatedPlayerData {
     name: string,

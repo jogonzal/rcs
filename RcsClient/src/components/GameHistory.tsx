@@ -1,10 +1,8 @@
 import * as React from 'react'
-import 'bootstrap/scss/bootstrap.scss'
-import 'bootstrap/dist/js/bootstrap.bundle.min.js'
 import { IGameData } from '../../GameData/IGameData'
 import { getAggregatedPlayerDataForGame, IAggregatedPlayerData } from '../stats/getAggregatedPlayerData'
-import transformDictionaryIntoObject from '../stats/transformDictionaryIntoObject';
-import sortByDimension from '../stats/sortByDimension';
+import transformDictionaryIntoObject from '../stats/transformDictionaryIntoObject'
+import sortByDimension from '../stats/sortByDimension'
 
 type State = {
 }
