@@ -11,6 +11,7 @@ import rcsIndoorSeasons from './stats/rcsIndoorSeasons'
 import rcsOutdoorSeasons from './stats/rcsOutdoorSeasons'
 import BabelTest from './components/BabelTest'
 import NotImplemented from './components/NotImplemented'
+import { TodoList } from './components/TodoList'
 
 import '@babel/polyfill'
 
@@ -27,6 +28,7 @@ render(
       <Route exact path='/rawData' component={RawData} />
       <Route exact path='/babelTest' component={BabelTest} />
       <Route exact path='/signin' component={NotImplemented} />
+      <Route exact path='/todos' component={TodoList} />
 
     </div>
   </HashRouter>,
