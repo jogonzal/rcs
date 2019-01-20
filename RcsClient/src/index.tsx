@@ -13,6 +13,7 @@ import BabelTest from './components/BabelTest'
 import NotImplemented from './components/NotImplemented'
 import { TodoList } from './components/TodoList'
 import { NotFound } from './components/NotFound'
+import { MobxTimerView, MobxAppState } from './mobxstore/mobXSampleApp'
 
 import '@babel/polyfill'
 
@@ -31,6 +32,7 @@ render(
         <Route exact path='/babelTest' component={BabelTest} />
         <Route exact path='/signin' component={NotImplemented} />
         <Route exact path='/todos' component={TodoList} />
+        <Route exact path='/todosmobx' render={() => <MobxTimerView appState={new MobxAppState()} />} />
         <Route component={NotFound} />
       </Switch>
     </div>
