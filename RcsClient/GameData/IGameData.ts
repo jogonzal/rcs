@@ -22,7 +22,8 @@ export type PlayerName = 'AndreasH' |
 'LuisFelipe' |
 'Robert' |
 'Mahmoud' |
-'Colton'
+'Colton' |
+'Alex'
 
 export interface IPlayerGameData {
     Goals?: number
