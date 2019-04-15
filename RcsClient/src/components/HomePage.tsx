@@ -29,6 +29,11 @@ export default class HomePage extends React.Component<Props, State> {
         <Link to='/rcsindoor' >
             <Button className='btn-info'>RCS indoor</Button>
         </Link>
+        <br />
+        <br />
+        <Link to='/reddevils' >
+            <Button className='btn-info'>Red devils</Button>
+        </Link>
         </div>
       </div>
     )

@@ -30,6 +30,7 @@ render(
         <Route exact path='/' component={HomePage} />
         <Route exact path='/rcsindoor' render={() => <TeamStats teamName='RCS indoor' teamSeasons={rcsIndoorSeasonsNames} />} />
         <Route exact path='/rcsoutdoor' render={() => <TeamStats teamName='RCS outdoor' teamSeasons={rcsOutdoorSeasonsNames} />} />
+        <Route exact path='/reddevils' render={() => <TeamStats teamName='Red devils' teamSeasons={['Spring 2019']} />} />
         <Route exact path='/migrate' component={MigrateData} />
 
         {/* <Route exact path='/tasks' component={Tasks} />
