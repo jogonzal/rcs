@@ -20,7 +20,7 @@ const Malte = require('./img/players/Malte.jpg')
 const unknown = require('./img/players/unknown.png')
 
 export default class PlayerPics {
-    public static GetPic(player: PlayerName) {
+    public static GetPic(player: PlayerName): string {
         switch (player) {
             case 'JorgeA':
                 return JorgeA

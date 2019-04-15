@@ -558,6 +558,11 @@
     lodash "^4.17.10"
     to-fast-properties "^2.0.0"
 
+"@microsoft/load-themed-styles@^1.7.13":
+  version "1.8.84"
+  resolved "https://registry.yarnpkg.com/@microsoft/load-themed-styles/-/load-themed-styles-1.8.84.tgz#8febc876158d6625e55a786583e507cc490dd43e"
+  integrity sha512-2wva5i4gxGD+CdVudZkMb0HZyZo8ANXDTmUEohl9oak+NpCgBtXdruRh6UfrIJ59jTCcOV30rYoxSpieA6rYdA==
+
 "@mrmlnc/readdir-enhanced@^2.2.1":
   version "2.2.1"
   resolved "https://registry.yarnpkg.com/@mrmlnc/readdir-enhanced/-/readdir-enhanced-2.2.1.tgz#524af240d1a360527b730475ecfa1344aa540dde"
@@ -646,6 +651,61 @@
     "@types/d3-shape" "*"
     "@types/react" "*"
     "@types/recharts-scale" "*"
+
+"@uifabric/foundation@^0.7.4":
+  version "0.7.4"
+  resolved "https://registry.yarnpkg.com/@uifabric/foundation/-/foundation-0.7.4.tgz#365305990c8c8549f98eac3dd24ffc736111ae8a"
+  integrity sha512-hE7JiCvZuG0O7HOmeC3lIX9+KAXxnt9JTgQJw/MD/unnzSm0l/WqXb6bpCuYRVZuSvgEp9DcP/yn3iphJlRh5w==
+  dependencies:
+    "@uifabric/set-version" "^1.1.3"
+    "@uifabric/styling" "^6.45.2"
+    "@uifabric/utilities" "^6.35.3"
+    tslib "^1.7.1"
+
+"@uifabric/icons@^6.5.1":
+  version "6.5.1"
+  resolved "https://registry.yarnpkg.com/@uifabric/icons/-/icons-6.5.1.tgz#c71305d9a2bf106b59476b0275936cc4be9d5b34"
+  integrity sha512-d4JPubp1YDBUHq3fhm6X8aXFunIqQO/iURZFAVIkzPWQGsy+MG4FVr1xZTSjvn2QlV5uq50mpY8TtzwNKJRIIQ==
+  dependencies:
+    "@uifabric/set-version" "^1.1.3"
+    "@uifabric/styling" "^6.45.2"
+    tslib "^1.7.1"
+
+"@uifabric/merge-styles@^6.16.5":
+  version "6.16.5"
+  resolved "https://registry.yarnpkg.com/@uifabric/merge-styles/-/merge-styles-6.16.5.tgz#c10f046d547f2f295635c197cc16b0c687d7bfb6"
+  integrity sha512-zUzVxabq6E2AAY6h+WU6W4L4de9J+mIjZg3q/4bzna1hEQgccCZkVyHg7OesJAylPzp4lYP3KWKP9hRaOZlnhg==
+  dependencies:
+    "@uifabric/set-version" "^1.1.3"
+    tslib "^1.7.1"
+
+"@uifabric/set-version@^1.1.3":
+  version "1.1.3"
+  resolved "https://registry.yarnpkg.com/@uifabric/set-version/-/set-version-1.1.3.tgz#8d1137df1406f38828e597e81122077a16c8da8b"
+  integrity sha512-IYpwVIuN7MJOeiWzZzr9AmFSvA5zc6gJn4fNHtEFIQnNB8WVWIcYrvx8Tbf7wWj9MvhdHYp70F054zZlHbL/Ag==
+  dependencies:
+    tslib "^1.7.1"
+
+"@uifabric/styling@^6.45.2", "@uifabric/styling@^6.45.3":
+  version "6.45.3"
+  resolved "https://registry.yarnpkg.com/@uifabric/styling/-/styling-6.45.3.tgz#6de0597b9b1749fd4c8cc20123d5c9097690dd42"
+  integrity sha512-Ru/KL36YqZF6Tfb7uprKnIQlN19M3P1aBHW+afrrvjhJVi/RwYUR2aZGyydjAmVmwPw01/35NC2CMWGxAqaN1A==
+  dependencies:
+    "@microsoft/load-themed-styles" "^1.7.13"
+    "@uifabric/merge-styles" "^6.16.5"
+    "@uifabric/set-version" "^1.1.3"
+    "@uifabric/utilities" "^6.35.5"
+    tslib "^1.7.1"
+
+"@uifabric/utilities@^6.35.3", "@uifabric/utilities@^6.35.5":
+  version "6.35.5"
+  resolved "https://registry.yarnpkg.com/@uifabric/utilities/-/utilities-6.35.5.tgz#4a44b815694b87dc028e1641915d99803dfde62d"
+  integrity sha512-L+xd+Zkjr4YIMWs3kEwzibZG/DgXU4KpfQwynEq3p4P4hudei/0DzgGejRQ2jScwFvB0zVJQGa0sKR/Wc3ICZQ==
+  dependencies:
+    "@uifabric/merge-styles" "^6.16.5"
+    "@uifabric/set-version" "^1.1.3"
+    prop-types "^15.5.10"
+    tslib "^1.7.1"
 
 "@webassemblyjs/ast@1.5.12":
   version "1.5.12"
@@ -6560,6 +6620,21 @@ obuf@^1.0.0, obuf@^1.1.1:
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/obuf/-/obuf-1.1.2.tgz#09bea3343d41859ebd446292d11c9d4db619084e"
 
+office-ui-fabric-react@^6.166.0:
+  version "6.166.0"
+  resolved "https://registry.yarnpkg.com/office-ui-fabric-react/-/office-ui-fabric-react-6.166.0.tgz#39c24130674061f921509e2063ae91fef3a43577"
+  integrity sha512-rOFfhXZivffANdjuSanDvzq1x/NZrfpeXTgqhSIngzGEw8RKa2cJLT8oqDXGegOcars0RQInV3JSElrHO2jYow==
+  dependencies:
+    "@microsoft/load-themed-styles" "^1.7.13"
+    "@uifabric/foundation" "^0.7.4"
+    "@uifabric/icons" "^6.5.1"
+    "@uifabric/merge-styles" "^6.16.5"
+    "@uifabric/set-version" "^1.1.3"
+    "@uifabric/styling" "^6.45.3"
+    "@uifabric/utilities" "^6.35.5"
+    prop-types "^15.5.10"
+    tslib "^1.7.1"
+
 on-finished@~2.3.0:
   version "2.3.0"
   resolved "https://registry.yarnpkg.com/on-finished/-/on-finished-2.3.0.tgz#20f1336481b083cd75337992a16971aa2d906947"
@@ -9132,14 +9207,14 @@ tryer@^1.0.0:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/tryer/-/tryer-1.0.1.tgz#f2c85406800b9b0f74c9f7465b81eaad241252f8"
 
-tslib@^1.8.0, tslib@^1.8.1, tslib@^1.9.0:
-  version "1.9.2"
-  resolved "https://registry.yarnpkg.com/tslib/-/tslib-1.9.2.tgz#8be0cc9a1f6dc7727c38deb16c2ebd1a2892988e"
-
-tslib@^1.9.1:
+tslib@^1.7.1, tslib@^1.9.1:
   version "1.9.3"
   resolved "https://registry.yarnpkg.com/tslib/-/tslib-1.9.3.tgz#d7e4dd79245d85428c4d7e4822a79917954ca286"
   integrity sha512-4krF8scpejhaOgqzBEcGM7yDIEfi0/8+8zDRZhNZZ2kjmHJ4hv3zCbQWxoJGz1iw5U0Jl0nma13xzHXcncMavQ==
+
+tslib@^1.8.0, tslib@^1.8.1, tslib@^1.9.0:
+  version "1.9.2"
+  resolved "https://registry.yarnpkg.com/tslib/-/tslib-1.9.2.tgz#8be0cc9a1f6dc7727c38deb16c2ebd1a2892988e"
 
 tslint@^5.10.0:
   version "5.10.0"

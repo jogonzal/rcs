@@ -15,9 +15,11 @@ import { TodoList } from './components/TodoList'
 import { NotFound } from './components/NotFound'
 import { MobxTimerView, MobxAppState } from './mobxstore/mobXSampleApp'
 import { MigrateData } from './components/MigrateData'
+import { initializeIcons } from '@uifabric/icons'
 
 import '@babel/polyfill'
 
+initializeIcons()
 
 const rootEl = document.getElementById('root')
 

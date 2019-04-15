@@ -7,6 +7,7 @@ import GameHistory from './GameHistory'
 import PlayerChart from './PlayerChart'
 import { IGameData } from '../../GameData/IGameData'
 import { RestApi } from '../shared/RestApi'
+import { AddGame } from './AddGame'
 
 type State = {
   addingGame: boolean
@@ -78,11 +79,10 @@ export default class App extends React.Component<Props, State> {
 
   render() {
     if (this.state.addingGame) {
-      return (
-        <div>
-          <p>Adding game UI...</p>
-        </div>
-      )
+      return <AddGame
+        teamName={this.props.teamName}
+        seasonName={this.state.currentSeason}
+      />
     }
 
     if (!this.state.currentSeasonGames) {

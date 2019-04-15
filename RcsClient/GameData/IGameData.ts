@@ -25,6 +25,35 @@ export type PlayerName = 'AndreasH' |
 'Colton' |
 'Alex'
 
+export const PlayerNames: { [key in PlayerName]: string } = {
+  Alex: 'Alejandro Gonzalez',
+  AndreasH: 'Andreas Hart',
+  ChrisB: 'Chris Bohm',
+  Colton: 'Colton',
+  DiegoV: 'Diego',
+  DineshV: 'Dinesh',
+  JasonR: 'Jason Ryder',
+  JordanH: 'Jordan Hoffman',
+  JorgeA: 'Jorge Aguirre',
+  JorgeM: 'Jorge Mata',
+  Khalef: 'Khalef',
+  LuisFelipe: 'Luis Felipe',
+  Mahmoud: 'Mahmoud',
+  Malte: 'Malte',
+  MarkT: 'Mark Traverso',
+  MartinM: 'Martin Moreno',
+  MattA: 'Matt Ashman',
+  MattMC: 'Matt McSpirit',
+  MattR: 'Matt Ryder',
+  NicoS: 'Nicolas',
+  Nimish: 'Nimish',
+  RaymondO: 'Raymond',
+  Robert: 'Robert',
+  ScottO: 'Scott Olsen',
+  UmairA: 'Umair',
+  Ville: 'Ville',
+}
+
 export interface IPlayerGameData {
     Goals?: number
     Assists?: number

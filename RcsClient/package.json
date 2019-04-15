@@ -82,6 +82,7 @@
     "mobx": "^5.8.0",
     "mobx-react": "^5.4.3",
     "mobx-react-devtools": "^6.0.3",
+    "office-ui-fabric-react": "^6.166.0",
     "react": "^16.4.0",
     "react-bootstrap": "^0.32.4",
     "react-dom": "^16.4.0",
