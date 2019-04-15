@@ -9,6 +9,7 @@ import { IGameData } from '../../GameData/IGameData'
 import { RestApi } from '../shared/RestApi'
 
 type State = {
+  addingGame: boolean
   currentSeason: string
   currentSeasonGames?: IGameData[]
 }
@@ -23,6 +24,7 @@ export default class App extends React.Component<Props, State> {
   constructor(props: Props) {
     super(props)
     this.state = {
+      addingGame: false,
       currentSeason: props.teamSeasons[0],
     }
   }
@@ -60,6 +62,12 @@ export default class App extends React.Component<Props, State> {
     }
   }
 
+  addTeamGame = () => {
+    this.setState({
+      addingGame: true,
+    })
+  }
+
   renderSeasonButtons = () => {
     return this.props.teamSeasons.map(season => (
       <>
@@ -69,6 +77,14 @@ export default class App extends React.Component<Props, State> {
   }
 
   render() {
+    if (this.state.addingGame) {
+      return (
+        <div>
+          <p>Adding game UI...</p>
+        </div>
+      )
+    }
+
     if (!this.state.currentSeasonGames) {
       return (
         <p>Loading...</p>
@@ -122,6 +138,9 @@ export default class App extends React.Component<Props, State> {
             seasonName={this.state.currentSeason}
             teamName={this.props.teamName}
             />
+            <div>
+              <button onClick={ this.addTeamGame } className='btn btn-success'>Add team game <span className='glyphicon glyphicon-plus'></span></button>
+            </div>
         </div>
       </div>
     )
