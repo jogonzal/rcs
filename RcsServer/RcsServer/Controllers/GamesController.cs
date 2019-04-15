@@ -49,7 +49,7 @@ namespace RcsServer.Controllers
 		{
 			if (rec != "jorge")
 			{
-				throw new NotImplementedException();
+				return Unauthorized();
 			}
 
 			await TableStorage.DeleteRow(TableName, this.GetPartitionName(season, teamName), gameId);
