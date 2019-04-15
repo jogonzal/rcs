@@ -3,15 +3,25 @@ import { IGameData } from '../../GameData/IGameData'
 import { getAggregatedPlayerDataForGame, IAggregatedPlayerData } from '../stats/getAggregatedPlayerData'
 import transformDictionaryIntoObject from '../stats/transformDictionaryIntoObject'
 import sortByDimension from '../stats/sortByDimension'
+import { RestApi } from '../shared/RestApi'
 
 type State = {
 }
 
 type Props = {
+    teamName: string
+    seasonName: string
     data: IGameData[]
 }
 
 export default class GameHistory extends React.Component<Props, State> {
+  deleteRow = (rowKey: string) => {
+    return async () => {
+      await RestApi.deleteGame(this.props.teamName, this.props.seasonName, rowKey)
+      window.location.reload()
+    }
+  }
+
     renderResult = (gameData: IGameData) => {
         if (gameData.goalsInFavor > gameData.goalsAgainst) {
             return (<span className='text-success'>WIN</span>)
@@ -54,6 +64,7 @@ export default class GameHistory extends React.Component<Props, State> {
                 <td>{gameData.date}</td>
                 <td>{goalsDescription}</td>
                 <td>{assistsDescription}</td>
+                <td><button className='btn btn-danger' onClick={this.deleteRow(gameData.rowKey)}><span className='glyphicon glyphicon-trash'></span></button></td>
             </tr>
         )
     }
@@ -70,6 +81,7 @@ export default class GameHistory extends React.Component<Props, State> {
                         <th scope='col'>Date</th>
                         <th scope='col'>Goals</th>
                         <th scope='col'>Assists</th>
+                        <th scope='col'>Delete</th>
                         </tr>
                     </thead>
                     <tbody>

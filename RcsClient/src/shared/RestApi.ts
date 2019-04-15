@@ -18,7 +18,9 @@ export class RestApi {
               MartinM: { Goals: 2, Pitchers: 1 },
               MarkT: { Goals: 2 },
               Nimish: { Assists: 1 },
-          }
+          },
+          partitionKey: '',
+          rowKey: '',
       },
       {
           opponent: 'Turn 10',
@@ -33,7 +35,9 @@ export class RestApi {
               MartinM: { Goals: 2, Pitchers: 1 },
               MarkT: { Goals: 2 },
               Nimish: { Assists: 1 },
-          }
+          },
+          partitionKey: '',
+          rowKey: '',
       },
       ]
     }
@@ -65,7 +69,16 @@ export class RestApi {
       body: JSON.stringify(gameDataToSend)
     })
     if (response.status !== 200) {
-      throw new Error(`Failed to create games!`)
+      throw new Error(`Failed to create game!`)
+    }
+  }
+
+  static async deleteGame(teamName: string, seasonName: string, gameKey: string): Promise<void> {
+    const response = await fetch(`/api/games?season=${encodeURIComponent(seasonName)}&teamName=${encodeURIComponent(teamName)}&rec=${this.getRec()}&gameId=${encodeURIComponent(gameKey)}`, {
+      method: 'DELETE',
+    })
+    if (response.status !== 200) {
+      throw new Error(`Failed to delete game!`)
     }
   }
 }

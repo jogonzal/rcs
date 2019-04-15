@@ -45,7 +45,9 @@ const spring2019Data: IGameData[] =
             MartinM: { Goals: 2, Pitchers: 1 },
             MarkT: { Goals: 2 },
             Nimish: { Assists: 1 },
-        }
+        },
+        partitionKey: '',
+        rowKey: '',
     },
 ]
 

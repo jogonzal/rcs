@@ -119,6 +119,8 @@ export default class App extends React.Component<Props, State> {
           <hr />
           <GameHistory
             data={this.state.currentSeasonGames}
+            seasonName={this.state.currentSeason}
+            teamName={this.props.teamName}
             />
         </div>
       </div>

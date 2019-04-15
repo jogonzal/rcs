@@ -41,6 +41,8 @@ export interface IGameData {
     goalsAgainst: number
     notes: string
     playerStats: { [key in PlayerName]?: IPlayerGameData }
+    rowKey: string
+    partitionKey: string
 }
 
 export interface IGameDataForApi extends IGameData {

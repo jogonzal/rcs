@@ -50,7 +50,9 @@ const summer2018Data: IGameData[] =
             UmairA: { 'Goals': 1 },
             RaymondO: { 'Pitchers': 1 },
             Nimish: { }
-        }
+        },
+        partitionKey: '',
+        rowKey: '',
     },
     {
         opponent: 'Costco team in Issaquah',
@@ -70,7 +72,9 @@ const summer2018Data: IGameData[] =
             Nimish: { },
             MartinM: { },
             JasonR: { 'Assists': 1 }
-        }
+        },
+        partitionKey: '',
+        rowKey: '',
     },
     {
         opponent: 'NSI',
@@ -90,7 +94,9 @@ const summer2018Data: IGameData[] =
             RaymondO: {},
             ChrisB: { Assists: 1 },
             MarkT: {}
-        }
+        },
+        partitionKey: '',
+        rowKey: '',
     },
     {
         opponent: 'Dacii',
@@ -110,7 +116,9 @@ const summer2018Data: IGameData[] =
             RaymondO: { Assists: 2 },
             ChrisB: { Assists: 1 },
             MarkT: { Assists: 1, Goals: 1 }
-        }
+        },
+        partitionKey: '',
+        rowKey: '',
     },
     {
         opponent: 'Yugo',
@@ -129,7 +137,9 @@ const summer2018Data: IGameData[] =
             DineshV: { BlueCards: 1, Pitchers: 1, Assists: 1 },
             MattR: { Goals: 1, Assists: 1 },
             MarkT: { Goals: 2, Assists: 1 }
-        }
+        },
+        partitionKey: '',
+        rowKey: '',
     },
     {
         opponent: 'Torpedo Gopota',
@@ -144,7 +154,9 @@ const summer2018Data: IGameData[] =
             MarkT: { Goals: 1 },
             ChrisB: { Assists: 1 },
             AndreasH: { Goals: 1 }
-        }
+        },
+        partitionKey: '',
+        rowKey: '',
     }
 ]
 

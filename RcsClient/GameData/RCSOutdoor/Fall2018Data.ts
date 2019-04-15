@@ -40,7 +40,9 @@ const fall2018Data: IGameData[] =
         notes: 'Goal was caused by bad defending by Jorge and Dinesh, but they did have a few other chances also due to bad defending. They missed a penalty and we missed all of our opportunities, though we had a few good shots.',
         playerStats:
         {
-        }
+        },
+        partitionKey: '',
+        rowKey: '',
     },
 	{
         opponent: '.NET',
@@ -52,7 +54,9 @@ const fall2018Data: IGameData[] =
         {
             Mahmoud: { Goals: 2 },
             MattMC: { Assists: 1 }
-        }
+        },
+        partitionKey: '',
+        rowKey: '',
     },
 	{
         opponent: 'Stone',
@@ -66,7 +70,9 @@ const fall2018Data: IGameData[] =
             Colton: { Goals: 1 },
             MattMC: { Assists: 1 },
             MarkT: { Assists: 1 }
-        }
+        },
+        partitionKey: '',
+        rowKey: '',
     }
 ]
 

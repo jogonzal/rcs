@@ -46,7 +46,9 @@ const fall2018Data: IGameData[] =
 			Robert: { Goals: 1 },
 			JasonR: { Goals: 1 },
 			RaymondO: { Goals: 1 }
-        }
+        },
+        partitionKey: '',
+        rowKey: '',
     },
 	{
         opponent: 'The Pot',
@@ -64,7 +66,9 @@ const fall2018Data: IGameData[] =
 			MattA: { Pitchers: 1 },
 			JorgeA: { Pitchers: 1 },
 			MattR: { Pitchers: 1 }
-        }
+        },
+        partitionKey: '',
+        rowKey: '',
     },
     {
         opponent: 'En fuego',
@@ -81,7 +85,9 @@ const fall2018Data: IGameData[] =
             Nimish: { Goals: 1 },
             MattR: { Goals: 1 },
             MarkT: { Assists: 2, Goals: 1 }
-        }
+        },
+        partitionKey: '',
+        rowKey: '',
     },
 ]
 
