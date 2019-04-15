@@ -38,7 +38,7 @@ export function getAggregatedPlayerDataForGame(playerData: { [key in PlayerName]
 export default function getAggregatedPlayerDataForAllGames(games: IGameData[], orderBy: 'goals' | 'assists' | 'blueCards' | 'pitchers' | 'cleanSheets', n: number): IAggregatedPlayerData[] {
     const accumulatedPlayerData: { [key in PlayerName]?: IAggregatedPlayerData } = {}
     for (const game of games) {
-        const aggregatedGamePlayerData = getAggregatedPlayerDataForGame(game.PlayerStats)
+        const aggregatedGamePlayerData = getAggregatedPlayerDataForGame(game.playerStats)
         for (const playerGameData of aggregatedGamePlayerData) {
             const existingGameData: IAggregatedPlayerData = accumulatedPlayerData[playerGameData.name]
             if (existingGameData) {

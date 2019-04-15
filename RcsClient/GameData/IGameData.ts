@@ -31,14 +31,18 @@ export interface IPlayerGameData {
     Comment?: string
     Pitchers?: number
     BlueCards?: number
-    CleanSheets? : number
+    CleanSheets?: number
 }
 
 export interface IGameData {
-    Opponent: string
-    Date: string
-    GoalsInFavor: number
-    GoalsAgainst: number
-    Notes: string
-    PlayerStats: { [key in PlayerName]?: IPlayerGameData }
+    opponent: string
+    date: string
+    goalsInFavor: number
+    goalsAgainst: number
+    notes: string
+    playerStats: { [key in PlayerName]?: IPlayerGameData }
+}
+
+export interface IGameDataForApi extends IGameData {
+  serializedPlayerStats: string
 }

@@ -33,12 +33,12 @@ import { IGameData } from '../IGameData'
 const spring2019Data: IGameData[] =
 [
 	{
-        Opponent: 'Turn 10',
-        Date: '4/10/2018',
-        GoalsInFavor: 5,
-        GoalsAgainst: 2,
-        Notes: 'Good game, tough opponent',
-        PlayerStats:
+        opponent: 'Turn 10',
+        date: '4/10/2018',
+        goalsInFavor: 5,
+        goalsAgainst: 2,
+        notes: 'Good game, tough opponent',
+        playerStats:
         {
             Alex: { Goals: 1 },
             JorgeA: { Assists: 1, Pitchers: 1 },

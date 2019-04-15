@@ -33,12 +33,12 @@ import { IGameData } from '../IGameData'
 const summer2018Data: IGameData[] =
 [
     {
-        Opponent: 'The Pot',
-        Date: '7/11/2018',
-        GoalsInFavor: 4,
-        GoalsAgainst: 6,
-        Notes: 'This is the second game we lose against the Pot - they have a strong indoor team - Josh and Carlos have speed and they got us on many counters. Next time we should focus on finishing our plays and not push all of our players to their side of the field.',
-        PlayerStats:
+        opponent: 'The Pot',
+        date: '7/11/2018',
+        goalsInFavor: 4,
+        goalsAgainst: 6,
+        notes: 'This is the second game we lose against the Pot - they have a strong indoor team - Josh and Carlos have speed and they got us on many counters. Next time we should focus on finishing our plays and not push all of our players to their side of the field.',
+        playerStats:
         {
             ChrisB: { Assists: 1 },
             DiegoV: { 'Assists': 1 },
@@ -53,12 +53,12 @@ const summer2018Data: IGameData[] =
         }
     },
     {
-        Opponent: 'Costco team in Issaquah',
-        Date: '7/25/2018',
-        GoalsInFavor: 11,
-        GoalsAgainst: 4,
-        Notes: 'We played well and were better than them - Mark, Malte especially had a great game.',
-        PlayerStats:
+        opponent: 'Costco team in Issaquah',
+        date: '7/25/2018',
+        goalsInFavor: 11,
+        goalsAgainst: 4,
+        notes: 'We played well and were better than them - Mark, Malte especially had a great game.',
+        playerStats:
         {
             Malte: { 'Assists': 2, 'Goals': 3 },
             DiegoV: { 'Assists': 1, 'Goals': 1 },
@@ -73,12 +73,12 @@ const summer2018Data: IGameData[] =
         }
     },
     {
-        Opponent: 'NSI',
-        Date: '8/1/2018',
-        GoalsInFavor: 1,
-        GoalsAgainst: 2,
-        Notes: 'We overcommitted on offense and got countered many times. We struggled to finish our plays on offense.',
-        PlayerStats:
+        opponent: 'NSI',
+        date: '8/1/2018',
+        goalsInFavor: 1,
+        goalsAgainst: 2,
+        notes: 'We overcommitted on offense and got countered many times. We struggled to finish our plays on offense.',
+        playerStats:
         {
             DiegoV: {},
             JorgeA: {},
@@ -93,12 +93,12 @@ const summer2018Data: IGameData[] =
         }
     },
     {
-        Opponent: 'Dacii',
-        Date: '8/1/2018',
-        GoalsInFavor: 6,
-        GoalsAgainst: 4,
-        Notes: 'We played well, but got countered many times 2v1. We were a bit lucky on those.',
-        PlayerStats:
+        opponent: 'Dacii',
+        date: '8/1/2018',
+        goalsInFavor: 6,
+        goalsAgainst: 4,
+        notes: 'We played well, but got countered many times 2v1. We were a bit lucky on those.',
+        playerStats:
         {
             DiegoV: { Goals: 1 },
             JorgeA: { Goals: 2 },
@@ -113,12 +113,12 @@ const summer2018Data: IGameData[] =
         }
     },
     {
-        Opponent: 'Yugo',
-        Date: '8/9/2018',
-        GoalsInFavor: 7,
-        GoalsAgainst: 7,
-        Notes: 'We did not defend well, but showed great spirit and came back from a 4-7.',
-        PlayerStats:
+        opponent: 'Yugo',
+        date: '8/9/2018',
+        goalsInFavor: 7,
+        goalsAgainst: 7,
+        notes: 'We did not defend well, but showed great spirit and came back from a 4-7.',
+        playerStats:
         {
             DiegoV: { Goals: 1 },
             JorgeA: { Goals: 2, Assists: 1 },
@@ -132,12 +132,12 @@ const summer2018Data: IGameData[] =
         }
     },
     {
-        Opponent: 'Torpedo Gopota',
-        Date: '8/15/2018',
-        GoalsInFavor: 4,
-        GoalsAgainst: 6,
-        Notes: '',
-        PlayerStats:
+        opponent: 'Torpedo Gopota',
+        date: '8/15/2018',
+        goalsInFavor: 4,
+        goalsAgainst: 6,
+        notes: '',
+        playerStats:
         {
             Ville: { Goals: 1, Pitchers: 1 },
             MattR: { Assists: 1 },

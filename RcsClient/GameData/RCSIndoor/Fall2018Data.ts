@@ -33,12 +33,12 @@ import { IGameData } from '../IGameData'
 const fall2018Data: IGameData[] =
 [
 	{
-        Opponent: 'Yugo',
-        Date: '8/22/2018',
-        GoalsInFavor: 9,
-        GoalsAgainst: 3,
-        Notes: '',
-        PlayerStats:
+        opponent: 'Yugo',
+        date: '8/22/2018',
+        goalsInFavor: 9,
+        goalsAgainst: 3,
+        notes: '',
+        playerStats:
         {
 			MattR: { Goals: 1, Assists: 1 },
 			Nimish: { Goals: 1 },
@@ -49,12 +49,12 @@ const fall2018Data: IGameData[] =
         }
     },
 	{
-        Opponent: 'The Pot',
-        Date: '8/29/2018',
-        GoalsInFavor: 4,
-        GoalsAgainst: 3,
-        Notes: 'We defended pretty well, except towards the end when they attacked pretty intensely. The Pot had a few ringers, but we still managed to win.',
-        PlayerStats:
+        opponent: 'The Pot',
+        date: '8/29/2018',
+        goalsInFavor: 4,
+        goalsAgainst: 3,
+        notes: 'We defended pretty well, except towards the end when they attacked pretty intensely. The Pot had a few ringers, but we still managed to win.',
+        playerStats:
         {
 			LuisFelipe: { Goals: 1 },
 			Ville: { Goals: 1 },
@@ -67,12 +67,12 @@ const fall2018Data: IGameData[] =
         }
     },
     {
-        Opponent: 'En fuego',
-        Date: '8/29/2018',
-        GoalsInFavor: 9,
-        GoalsAgainst: 0,
-        Notes: 'This was an easy game.',
-        PlayerStats:
+        opponent: 'En fuego',
+        date: '8/29/2018',
+        goalsInFavor: 9,
+        goalsAgainst: 0,
+        notes: 'This was an easy game.',
+        playerStats:
         {
             ChrisB: { CleanSheets: 1 },
             DiegoV: { Goals: 2, Pitchers: 1 },

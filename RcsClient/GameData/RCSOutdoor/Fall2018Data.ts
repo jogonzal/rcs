@@ -33,34 +33,34 @@ import { IGameData } from '../IGameData'
 const fall2018Data: IGameData[] =
 [
 	{
-        Opponent: 'Scorpionissimi',
-        Date: '8/25/2018',
-        GoalsInFavor: 0,
-        GoalsAgainst: 1,
-        Notes: 'Goal was caused by bad defending by Jorge and Dinesh, but they did have a few other chances also due to bad defending. They missed a penalty and we missed all of our opportunities, though we had a few good shots.',
-        PlayerStats:
+        opponent: 'Scorpionissimi',
+        date: '8/25/2018',
+        goalsInFavor: 0,
+        goalsAgainst: 1,
+        notes: 'Goal was caused by bad defending by Jorge and Dinesh, but they did have a few other chances also due to bad defending. They missed a penalty and we missed all of our opportunities, though we had a few good shots.',
+        playerStats:
         {
         }
     },
 	{
-        Opponent: '.NET',
-        Date: '8/31/2018',
-        GoalsInFavor: 2,
-        GoalsAgainst: 2,
-        Notes: 'Goal was caused by bad defending by Jorge and Dinesh, but they did have a few other chances also due to bad defending. They missed a penalty and we missed all of our opportunities, though we had a few good shots.',
-        PlayerStats:
+        opponent: '.NET',
+        date: '8/31/2018',
+        goalsInFavor: 2,
+        goalsAgainst: 2,
+        notes: 'Goal was caused by bad defending by Jorge and Dinesh, but they did have a few other chances also due to bad defending. They missed a penalty and we missed all of our opportunities, though we had a few good shots.',
+        playerStats:
         {
             Mahmoud: { Goals: 2 },
             MattMC: { Assists: 1 }
         }
     },
 	{
-        Opponent: 'Stone',
-        Date: '09/04/2018',
-        GoalsInFavor: 2,
-        GoalsAgainst: 0,
-        Notes: '',
-        PlayerStats:
+        opponent: 'Stone',
+        date: '09/04/2018',
+        goalsInFavor: 2,
+        goalsAgainst: 0,
+        notes: '',
+        playerStats:
         {
             Mahmoud: { Goals: 1 },
             Colton: { Goals: 1 },

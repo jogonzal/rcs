@@ -6,25 +6,53 @@ import NavBar from './NavBar'
 import GameHistory from './GameHistory'
 import PlayerChart from './PlayerChart'
 import { IGameData } from '../../GameData/IGameData'
+import { RestApi } from '../shared/RestApi'
 
 type State = {
   currentSeason: string
+  currentSeasonGames?: IGameData[]
 }
 
 type Props = {
-  teamSeasons: { [key: string]: IGameData[] }
+  teamSeasons: string[]
   teamName: string
 }
 
 export default class App extends React.Component<Props, State> {
 
+  constructor(props: Props) {
+    super(props)
+    this.state = {
+      currentSeason: props.teamSeasons[0],
+    }
+  }
+
   componentDidMount() {
+    this.loadCurrentSeason()
+  }
+
+  componentDidUpdate(_prevProps: Props, prevState: State) {
+    if (prevState.currentSeason !== this.state.currentSeason) {
+      this.loadCurrentSeason()
+    }
   }
 
   componentWillUnmount() {
   }
 
-  changeSeason(season: any) {
+  private async loadCurrentSeason(): Promise<void> {
+    // Clear current games
+    this.setState({
+      currentSeasonGames: undefined,
+    })
+    // Get new games and set in state
+    const currentSeasonGames = await RestApi.getGames(this.props.teamName, this.state.currentSeason)
+    this.setState({
+      currentSeasonGames: currentSeasonGames,
+    })
+  }
+
+  changeSeason(season: string) {
     return () => {
       this.setState({
         currentSeason: season
@@ -33,22 +61,20 @@ export default class App extends React.Component<Props, State> {
   }
 
   renderSeasonButtons = () => {
-    const arr = Object.keys(this.props.teamSeasons)
-    return arr.map(season => (
+    return this.props.teamSeasons.map(season => (
       <>
         <button className='btn btn-info' onClick={this.changeSeason(season)} >{season}</button> |
       </>
     ))
   }
 
-  constructor(props) {
-    super(props)
-    this.state = {
-      currentSeason: Object.keys(this.props.teamSeasons)[0]
-    }
-  }
-
   render() {
+    if (!this.state.currentSeasonGames) {
+      return (
+        <p>Loading...</p>
+      )
+    }
+
     return (
       <div style={{minWidth: '500px'}}>
         <NavBar />
@@ -59,40 +85,40 @@ export default class App extends React.Component<Props, State> {
           <h1>Stats for {this.state.currentSeason}</h1>
           <PlayerChart
             field='goals'
-            data={this.props.teamSeasons[this.state.currentSeason]}
+            data={this.state.currentSeasonGames}
             height={300}
             N={5}
           />
           <hr />
           <PlayerChart
             field='assists'
-            data={this.props.teamSeasons[this.state.currentSeason]}
+            data={this.state.currentSeasonGames}
             height={300}
             N={5}
           />
           <hr />
           <PlayerChart
             field='blueCards'
-            data={this.props.teamSeasons[this.state.currentSeason]}
+            data={this.state.currentSeasonGames}
             height={300}
             N={5}
           />
           <hr />
           <PlayerChart
             field='pitchers'
-            data={this.props.teamSeasons[this.state.currentSeason]}
+            data={this.state.currentSeasonGames}
             height={300}
             N={5}
           />
           <PlayerChart
             field='cleanSheets'
-            data={this.props.teamSeasons[this.state.currentSeason]}
+            data={this.state.currentSeasonGames}
             height={300}
             N={5}
           />
           <hr />
           <GameHistory
-            data={this.props.teamSeasons[this.state.currentSeason]}
+            data={this.state.currentSeasonGames}
             />
         </div>
       </div>

@@ -13,16 +13,16 @@ type Props = {
 
 export default class GameHistory extends React.Component<Props, State> {
     renderResult = (gameData: IGameData) => {
-        if (gameData.GoalsInFavor > gameData.GoalsAgainst) {
+        if (gameData.goalsInFavor > gameData.goalsAgainst) {
             return (<span className='text-success'>WIN</span>)
-        } else if (gameData.GoalsAgainst > gameData.GoalsInFavor) {
+        } else if (gameData.goalsAgainst > gameData.goalsInFavor) {
             return (<span className='text-danger'>LOST</span>)
         }
         return (<span className='text-primary'>TIE</span>)
     }
 
     renderRow = (gameData: IGameData, i: number) => {
-        const aggregatePlayerStats = getAggregatedPlayerDataForGame(gameData.PlayerStats)
+        const aggregatePlayerStats = getAggregatedPlayerDataForGame(gameData.playerStats)
         const sortedByGoals: IAggregatedPlayerData[] = transformDictionaryIntoObject(aggregatePlayerStats) as any
         sortByDimension(sortedByGoals, 'goals')
 
@@ -49,9 +49,9 @@ export default class GameHistory extends React.Component<Props, State> {
 
         return (
             <tr key={i}>
-                <th scope='row'>{gameData.Opponent}</th>
-                <td><strong>{this.renderResult(gameData)}</strong> {gameData.GoalsInFavor} - {gameData.GoalsAgainst}</td>
-                <td>{gameData.Date}</td>
+                <th scope='row'>{gameData.opponent}</th>
+                <td><strong>{this.renderResult(gameData)}</strong> {gameData.goalsInFavor} - {gameData.goalsAgainst}</td>
+                <td>{gameData.date}</td>
                 <td>{goalsDescription}</td>
                 <td>{assistsDescription}</td>
             </tr>
