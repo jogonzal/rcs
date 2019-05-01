@@ -1,4 +1,4 @@
-import { PlayerName } from '../../GameData/IGameData'
+import { PlayerName, PlayerNames } from '../../GameData/IGameData'
 
 const JorgeA = require('./img/players/jorgea.jpg')
 const DineshV = require('./img/players/dineshv.jpg')
@@ -17,10 +17,26 @@ const ChrisB = require('./img/players/ChrisB.png')
 const Umair = require('./img/players/Umair.jpg')
 const Malte = require('./img/players/Malte.jpg')
 
-const unknown = require('./img/players/unknown.png')
+// const unknown = require('./img/players/unknown.png')
 
 export default class PlayerPics {
-    public static GetPic(player: PlayerName): string {
+  public static findPlayerByName(playerName: string): PlayerName {
+    for (const playerKey of Object.keys(PlayerNames)) {
+      console.log(`Comparing ${PlayerNames[playerKey]} with ${playerName}`)
+      if (PlayerNames[playerKey] === playerName) {
+        return (playerKey as PlayerName)
+      }
+    }
+
+    throw new Error(`Could not find player ${playerName}`)
+  }
+
+  public static getPicByName(playerName: string): string | undefined {
+    const playerKey = this.findPlayerByName(playerName)
+    return this.GetPic(playerKey)
+  }
+
+    public static GetPic(player: PlayerName): string | undefined {
         switch (player) {
             case 'JorgeA':
                 return JorgeA
@@ -55,7 +71,7 @@ export default class PlayerPics {
             case 'Malte':
                 return Malte
             default:
-                return unknown
+                return undefined
         }
     }
 }

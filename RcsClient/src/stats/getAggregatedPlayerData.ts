@@ -1,4 +1,4 @@
-import { PlayerName, IPlayerGameData, IGameData } from '../../GameData/IGameData'
+import { PlayerName, IPlayerGameData, IGameData, PlayerNames } from '../../GameData/IGameData'
 import sortByDimension from './sortByDimension'
 import transformDictionaryIntoObject from './transformDictionaryIntoObject'
 
@@ -18,11 +18,11 @@ function transformToNumber(num?: number) {
 
 export function getAggregatedPlayerDataForGame(playerData: { [key in PlayerName]?: IPlayerGameData }): IAggregatedPlayerData[] {
     let dataToReturn: IAggregatedPlayerData[] = []
-    for (const playerName of Object.keys(playerData)) {
-        const currentPlayerData: IPlayerGameData = playerData[playerName]
+    for (const playerKey of Object.keys(playerData)) {
+        const currentPlayerData: IPlayerGameData = playerData[playerKey]
 
         const aggregatedPlayerData: IAggregatedPlayerData = {
-            name: playerName,
+            name: PlayerNames[playerKey],
             goals: transformToNumber(currentPlayerData.Goals),
             assists: transformToNumber(currentPlayerData.Assists),
             pitchers: transformToNumber(currentPlayerData.Pitchers),
