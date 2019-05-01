@@ -31,7 +31,8 @@ export type PlayerName = 'AndreasH' |
 'Neil' |
 'Ayman' |
 'Michael Cossy' |
-'Nicholas Lavigne'
+'Nicholas Lavigne' |
+'Rash'
 
 export const PlayerNames: { [key in PlayerName]: string } = {
   Alex: 'Alejandro Gonzalez',
@@ -68,6 +69,7 @@ export const PlayerNames: { [key in PlayerName]: string } = {
   SamyBoshra: 'Samy Boshra',
   'Michael Cossy': 'Michael Cossy',
   'Nicholas Lavigne': 'Nicholas Lavigne',
+  'Rash': 'Rash',
 }
 
 export interface IPlayerGameData {
