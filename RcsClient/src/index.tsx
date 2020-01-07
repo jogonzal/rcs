@@ -16,6 +16,7 @@ import { NotFound } from './components/NotFound'
 import { MobxTimerView, MobxAppState } from './mobxstore/mobXSampleApp'
 import { MigrateData } from './components/MigrateData'
 import { initializeIcons } from '@uifabric/icons'
+import { FloatingPickerDemo } from './components/FloatingPickerDemo'
 
 import '@babel/polyfill'
 
@@ -32,6 +33,8 @@ render(
         <Route exact path='/rcsoutdoor' render={() => <TeamStats teamName='RCS outdoor' teamSeasons={rcsOutdoorSeasonsNames} />} />
         <Route exact path='/reddevils' render={() => <TeamStats teamName='Red devils' teamSeasons={['Spring 2019']} />} />
         <Route exact path='/migrate' component={MigrateData} />
+
+        <Route exact path='/floatingpickerdemo' component={FloatingPickerDemo} />
 
         {/* <Route exact path='/tasks' component={Tasks} />
         <Route exact path='/sampleApp' component={SampleApp} />
